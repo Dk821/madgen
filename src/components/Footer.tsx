@@ -27,7 +27,7 @@ export default function Footer() {
               <h4>Connect</h4>
               <a href="mailto:hello@madgen.co">hello@madgen.co</a>
               <a href="#">LinkedIn</a>
-              <a href="#">Instagram</a>
+              <a href="https://www.instagram.com/madgen.media/">Instagram</a>
             </div>
           </div>
         </div>
