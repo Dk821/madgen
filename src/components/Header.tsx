@@ -1,8 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTheme } from '../context/ThemeContext'
+import Sidebar from './Sidebar'
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme()
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -46,9 +48,21 @@ export default function Header() {
               </svg>
             </button>
             <a href="#cta" className="btn btn-primary">Start a Project</a>
+            <button
+              className={`hamburger ${sidebarOpen ? 'open' : ''}`}
+              type="button"
+              aria-label={sidebarOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={sidebarOpen}
+              onClick={() => setSidebarOpen(v => !v)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
           </div>
         </div>
       </div>
+      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
     </header>
   )
 }

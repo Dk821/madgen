@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const projects = [
   { tag: 'Website', glyph: '01', title: 'SENTHUR VFX', desc: 'Client portfolio — full-service agency site built with care.', tint: 'var(--teal)', pos: '50% 50%', url: 'https://senthur-ytta.vercel.app/', img: '/our-work/SENTHUR-VFX.png' },
-  { tag: 'Website', glyph: '02', title: 'Only Moringa', desc: 'wellness application with a clean interface, interactive features, and scalable architecture', tint: 'var(--teal)', pos: '50% 50%', url: 'https://wellness-git-main-dk821s-projects.vercel.app/', img: '/our-work/Only-moringa.png' },
+  { tag: 'Website', glyph: '02', title: 'Only Moringa', desc: 'wellness application with a clean interface, interactive features, and scalable architecture', tint: 'var(--teal)', pos: '50% 50%', url: 'https://wellness-sand.vercel.app/', img: '/our-work/Only-moringa.png' },
   { tag: 'Website', glyph: '02', title: 'suvaicatering', desc: 'Designed an engaging Instagram carousel for Suvai Catering to showcase menu offerings and strengthen brand presence', tint: 'var(--teal)', pos: '50% 50%', url: 'https://www.instagram.com/p/Dak0bnNklTY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', img: '/our-work/suvaicatering-carousel.png' },
   { tag: 'Logo', glyph: '03', title: 'PMT Logo', desc: 'Logo design — click to view full image.', tint: 'var(--amber)', pos: '50% 50%', img: '/our-work/pmt-logo.jpg' },
   { tag: 'Logo', glyph: '04', title: 'Branproz Final', desc: 'Logo design — click to view full image.', tint: 'var(--amber)', pos: '50% 50%', img: '/our-work/Branproz-Logo.png' },
@@ -31,7 +31,7 @@ export default function Work() {
             const wrapperProps = p.url
               ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' as const }
               : p.img
-              ? { onClick: () => setLightbox(p.img), style: { cursor: 'pointer', border: 'none', textAlign: 'left' as const, width: '100%' } }
+              ? { onClick: () => setLightbox(p.img), style: { cursor: 'pointer', border: 'none', textAlign: 'left' as const, width: '100%', background: 'transparent', color: 'inherit', padding: 0, font: 'inherit' } }
               : {}
             return (
               <Wrapper {...wrapperProps} className="work-card reveal" key={i}>

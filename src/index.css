@@ -161,6 +161,77 @@ nav.links { display:flex; align-items:center; gap:30px; }
 nav.links a { font-size:13.5px; color:var(--ink-dim); font-weight:500; transition:color .2s ease; position:relative;}
 nav.links a:hover { color:var(--ink); }
 @media(max-width:860px) { nav.links { display:none; } }
+@media(max-width:860px) { .theme-toggle { display:none; } }
+@media(max-width:860px) { .nav-shell .btn-primary { display:none; } }
+
+/* Hamburger */
+.hamburger {
+  display:none; flex-direction:column; justify-content:center; gap:5px;
+  width:38px; height:38px; border:none; background:transparent; cursor:pointer;
+  padding:8px; border-radius:8px; transition:background .2s ease;
+}
+.hamburger span {
+  display:block; width:100%; height:2px; border-radius:2px;
+  background:var(--ink); transition:transform .3s ease, opacity .3s ease;
+}
+.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+@media(max-width:860px) { .hamburger { display:flex; } }
+
+/* Mobile nav dropdown — expands below the header */
+.mobile-nav-dropdown {
+  display:none;
+  position:absolute; top:calc(100% + 8px); left:0; right:0;
+  margin:0 12px;
+  background:color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px 16px;
+  flex-direction:column; align-items:center; gap:24px;
+  opacity:0; transform:translateY(-8px) scale(0.97);
+  pointer-events:none;
+  transition:opacity .3s ease, transform .3s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow-y:auto;
+  max-height:calc(100vh - 100px);
+}
+.mobile-nav-dropdown.open {
+  opacity:1; transform:translateY(0) scale(1);
+  pointer-events:auto;
+}
+@media(max-width:860px) { .mobile-nav-dropdown { display:flex; } }
+
+.mobile-nav-links {
+  display:flex; flex-direction:column; align-items:center; gap:4px;
+  width:100%;
+}
+.mobile-nav-links a {
+  display:block; width:100%; text-align:center;
+  padding:14px 16px; border-radius:14px;
+  font-size:17px; font-weight:500; color:var(--ink-dim);
+  transition:color .2s ease, background .2s ease;
+}
+.mobile-nav-links a:hover { color:var(--ink); background:color-mix(in srgb, var(--surface) 50%, transparent); }
+
+.mobile-nav-actions {
+  display:flex; flex-direction:column; align-items:center; gap:12px;
+  width:100%;
+}
+.mobile-nav-theme {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  width:100%; padding:13px 20px; border-radius:14px;
+  border:1px solid var(--line-strong);
+  background:color-mix(in srgb, var(--surface) 40%, transparent);
+  color:var(--ink-dim); cursor:pointer;
+  font-family:var(--font-body); font-size:14px; font-weight:500;
+  transition:border-color .2s ease, color .2s ease, background .2s ease;
+}
+.mobile-nav-theme:hover { border-color:var(--ink-dim); color:var(--ink); background:var(--surface); }
+.mobile-nav-theme .icon-moon { display:none; }
+html[data-theme="light"] .mobile-nav-theme .icon-sun { display:none; }
+html[data-theme="light"] .mobile-nav-theme .icon-moon { display:block; }
+.mobile-nav-cta { width:100%; text-align:center; }
 .btn {
   display:inline-flex; align-items:center; gap:8px; justify-content:center;
   font-family:var(--font-body); font-weight:600; font-size:14px;
@@ -406,6 +477,7 @@ footer { border-top:1px solid var(--line); padding:64px 0 32px; }
   background:rgba(0,0,0,0.85); backdrop-filter:blur(8px);
   padding:40px;
 }
+@media(max-width:860px) { .lightbox-overlay { padding:80px 20px 20px; align-items:flex-start; } }
 .lightbox-image {
   max-width:90vw; max-height:90vh; object-fit:contain;
   border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,0.5);
@@ -414,7 +486,9 @@ footer { border-top:1px solid var(--line); padding:64px 0 32px; }
   position:absolute; top:20px; right:24px;
   font-size:36px; line-height:1; color:#fff; background:none; border:none; cursor:pointer;
   opacity:0.7; transition:opacity .2s; font-family:var(--font-display);
+  z-index:10000;
 }
 .lightbox-close:hover { opacity:1; }
+@media(max-width:860px) { .lightbox-close { top:76px; right:16px; font-size:32px; } }
 
 .reveal { opacity:0; transform:translateY(28px); }
