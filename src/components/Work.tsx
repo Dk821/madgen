@@ -16,7 +16,7 @@ export default function Work() {
       {lightbox && (
         <div className="lightbox-overlay" onClick={() => setLightbox(null)}>
           <button className="lightbox-close" onClick={() => setLightbox(null)}>×</button>
-          <img src={lightbox} alt="full size" className="lightbox-image" onClick={e => e.stopPropagation()} />
+          <img src={lightbox} alt={projects.find(p => p.img === lightbox)?.title || 'Project image'} className="lightbox-image" onClick={e => e.stopPropagation()} />
         </div>
       )}
       <div className="wrap">

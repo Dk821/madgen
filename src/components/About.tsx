@@ -13,7 +13,7 @@ export default function About() {
         </div>
         <div className="about-panel reveal">
           <ul className="about-list">
-            <li><span className="k">Founded</span><span className="v">2019</span></li>
+            <li><span className="k">Founded</span><span className="v">2025</span></li>
             <li><span className="k">Team</span><span className="v">14 specialists</span></li>
             <li><span className="k">Focus</span><span className="v">AI · Web · App · Growth</span></li>
             <li><span className="k">Based</span><span className="v">Remote-first, global</span></li>

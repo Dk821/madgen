@@ -22,7 +22,7 @@ export default function Header() {
       <div className="navbar">
         <div className="nav-shell">
           <a href="#hero" className="logo">
-            <img src="/madgen-logo.svg" alt="MADGEN" className="logo-img" />
+            <img src="/madgen-logo.svg" alt="Madgen home" className="logo-img" />
           </a>
           <nav className="links">
             <a href="#about">About</a>

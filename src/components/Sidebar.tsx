@@ -6,6 +6,11 @@ interface SidebarProps {
   onClose: () => void
 }
 
+const contactPhone = import.meta.env.VITE_CONTACT_PHONE || ''
+const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || ''
+const contactInstagram = import.meta.env.VITE_CONTACT_INSTAGRAM || ''
+const contactLinkedIn = import.meta.env.VITE_CONTACT_LINKEDIN || ''
+
 export default function Sidebar({ open, onClose }: SidebarProps) {
   const { theme, toggleTheme } = useTheme()
   const panelRef = useRef<HTMLDivElement>(null)
@@ -37,6 +42,29 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         <a href="#work" onClick={handleLinkClick}>Work</a>
       </nav>
 
+      <div className="mobile-nav-contact">
+        {contactPhone ? (
+          <a href={`https://wa.me/${contactPhone.replace(/[^+\d]/g, '')}`} target="_blank" rel="noopener noreferrer" className="mobile-nav-contact-link" aria-label="WhatsApp">
+            <i className="fa-brands fa-whatsapp"></i>
+          </a>
+        ) : null}
+        {contactEmail ? (
+          <a href={`mailto:${contactEmail}`} className="mobile-nav-contact-link" aria-label="Email">
+            <i className="fa-regular fa-envelope"></i>
+          </a>
+        ) : null}
+        {contactInstagram ? (
+          <a href={contactInstagram} target="_blank" rel="noopener noreferrer" className="mobile-nav-contact-link" aria-label="Instagram">
+            <i className="fa-brands fa-instagram"></i>
+          </a>
+        ) : null}
+        {contactLinkedIn ? (
+          <a href={contactLinkedIn} target="_blank" rel="noopener noreferrer" className="mobile-nav-contact-link" aria-label="LinkedIn">
+            <i className="fa-brands fa-linkedin-in"></i>
+          </a>
+        ) : null}
+      </div>
+
       <div className="mobile-nav-actions">
         <button
           className="mobile-nav-theme"
@@ -53,6 +81,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
           </svg>
           <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
         </button>
+
 
         <a href="#cta" className="btn btn-primary mobile-nav-cta" onClick={handleLinkClick}>
           Start a Project
