@@ -10,6 +10,9 @@ const contactPhone = import.meta.env.VITE_CONTACT_PHONE || ''
 const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || ''
 const contactInstagram = import.meta.env.VITE_CONTACT_INSTAGRAM || ''
 const contactLinkedIn = import.meta.env.VITE_CONTACT_LINKEDIN || ''
+const waMessage = encodeURIComponent(
+  "Hi Madgen! I came across your work and wanted to know more about your services."
+)
 
 export default function Sidebar({ open, onClose }: SidebarProps) {
   const { theme, toggleTheme } = useTheme()
@@ -44,7 +47,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
 
       <div className="mobile-nav-contact">
         {contactPhone ? (
-          <a href={`https://wa.me/${contactPhone.replace(/[^+\d]/g, '')}`} target="_blank" rel="noopener noreferrer" className="mobile-nav-contact-link" aria-label="WhatsApp">
+          <a href={`https://wa.me/${contactPhone.replace(/[^+\d]/g, '')}?text=${waMessage}`} target="_blank" rel="noopener noreferrer" className="mobile-nav-contact-link" aria-label="WhatsApp">
             <i className="fa-brands fa-whatsapp"></i>
           </a>
         ) : null}
