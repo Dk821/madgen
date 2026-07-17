@@ -7,8 +7,8 @@ const services = [
     desc: "Custom workflows and AI agents that take repetitive work off your team's plate — quietly, in the background, every day.",
     tags: ['Workflow design', 'AI agents', 'Integrations'],
     icon: [<path key="a" d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />, <circle key="b" cx="12" cy="12" r="3.2" />],
-    bg: '/service-image/dark/AI-Automation.png',
-    bgLight: '/service-image/light/AI-Automation.png',
+    bg: '/service-image/dark/AI-Automation.webp',
+    bgLight: '/service-image/light/AI-Automation.webp',
   },
   {
     index: '02',
@@ -16,8 +16,8 @@ const services = [
     desc: 'Fast, accessible, conversion-minded sites — built on modern stacks and designed to be edited without calling us every time.',
     tags: ['Marketing sites', 'E-commerce', 'CMS builds'],
     icon: [<rect key="a" x="3" y="4" width="18" height="14" rx="2" />, <path key="b" d="M3 9h18M8 21h8" />],
-    bg: '/service-image/dark/web-development.png',
-    bgLight: '/service-image/light/web-development.png',
+    bg: '/service-image/dark/web-development.webp',
+    bgLight: '/service-image/light/web-development.webp',
   },
   {
     index: '03',
@@ -25,8 +25,8 @@ const services = [
     desc: 'iOS, Android and cross-platform products — from first prototype through to something real users open every day.',
     tags: ['Mobile apps', 'Cross-platform', 'MVP builds'],
     icon: [<rect key="a" x="6" y="2" width="12" height="20" rx="2.5" />, <path key="b" d="M11 18h2" />],
-    bg: '/service-image/dark/App-Development.png',
-    bgLight: '/service-image/light/App-Development.png',
+    bg: '/service-image/dark/App-Development.webp',
+    bgLight: '/service-image/light/App-Development.webp',
   },
   {
     index: '04',
@@ -34,8 +34,8 @@ const services = [
     desc: 'Paid, organic and lifecycle campaigns tied to real revenue targets — not vanity metrics on a monthly slide deck.',
     tags: ['Paid media', 'SEO', 'Email & CRM'],
     icon: [<path key="a" d="M3 11l18-7-7 18-3-8-8-3z" />],
-    bg: '/service-image/dark/Digital-Marketing.png',
-    bgLight: '/service-image/light/Digital-Marketing.png',
+    bg: '/service-image/dark/Digital-Marketing.webp',
+    bgLight: '/service-image/light/Digital-Marketing.webp',
   },
   {
     index: '05',
@@ -43,8 +43,8 @@ const services = [
     desc: 'Identity systems — name, mark, voice and guidelines — built to hold up across a product, not just a pitch deck.',
     tags: ['Identity', 'Brand systems', 'Design language'],
     icon: [<path key="a" d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z" />],
-    bg: '/service-image/dark/Branding.png',
-    bgLight: '/service-image/light/Branding.png',
+    bg: '/service-image/dark/Branding.webp',
+    bgLight: '/service-image/light/Branding.webp',
   },
 ]
 
