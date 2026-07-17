@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ThemeProvider } from './context/ThemeContext'
@@ -136,6 +137,7 @@ export default function App() {
       <div className="grain" />
       <div className="glow-cursor" id="glowCursor" />
 
+      <Analytics />
       <Header />
 
       <main>

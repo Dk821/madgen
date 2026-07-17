@@ -4,6 +4,7 @@ const services = [
   {
     index: '01',
     name: 'AI Automation',
+    alt: 'AI Automation workflow diagram',
     desc: "Custom workflows and AI agents that take repetitive work off your team's plate — quietly, in the background, every day.",
     tags: ['Workflow design', 'AI agents', 'Integrations'],
     icon: [<path key="a" d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />, <circle key="b" cx="12" cy="12" r="3.2" />],
@@ -13,6 +14,7 @@ const services = [
   {
     index: '02',
     name: 'Website Development',
+    alt: 'Website Development preview',
     desc: 'Fast, accessible, conversion-minded sites — built on modern stacks and designed to be edited without calling us every time.',
     tags: ['Marketing sites', 'E-commerce', 'CMS builds'],
     icon: [<rect key="a" x="3" y="4" width="18" height="14" rx="2" />, <path key="b" d="M3 9h18M8 21h8" />],
@@ -22,6 +24,7 @@ const services = [
   {
     index: '03',
     name: 'App Development',
+    alt: 'App Development interface mockup',
     desc: 'iOS, Android and cross-platform products — from first prototype through to something real users open every day.',
     tags: ['Mobile apps', 'Cross-platform', 'MVP builds'],
     icon: [<rect key="a" x="6" y="2" width="12" height="20" rx="2.5" />, <path key="b" d="M11 18h2" />],
@@ -31,6 +34,7 @@ const services = [
   {
     index: '04',
     name: 'Digital Marketing',
+    alt: 'Digital Marketing strategy visual',
     desc: 'Paid, organic and lifecycle campaigns tied to real revenue targets — not vanity metrics on a monthly slide deck.',
     tags: ['Paid media', 'SEO', 'Email & CRM'],
     icon: [<path key="a" d="M3 11l18-7-7 18-3-8-8-3z" />],
@@ -40,6 +44,7 @@ const services = [
   {
     index: '05',
     name: 'Branding',
+    alt: 'Branding identity system design',
     desc: 'Identity systems — name, mark, voice and guidelines — built to hold up across a product, not just a pitch deck.',
     tags: ['Identity', 'Brand systems', 'Design language'],
     icon: [<path key="a" d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z" />],
@@ -60,8 +65,9 @@ export default function Services() {
         </div>
         <div className="svc-grid">
           {services.map((svc) => (
-            <div className="svc-card reveal" key={svc.index} style={{ '--card-bg': `url(${theme === 'light' ? svc.bgLight : svc.bg})` } as React.CSSProperties}>
-              <span className="svc-index">{svc.index}</span>
+            <div className="svc-card reveal" key={svc.index}>
+                <img className="svc-card-bg" src={theme === 'light' ? svc.bgLight : svc.bg} alt={svc.alt} loading="lazy" />
+                <span className="svc-index">{svc.index}</span>
               <div className="svc-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                   {svc.icon.map((node: React.ReactNode) => node)}
