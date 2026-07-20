@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import emailjs from '@emailjs/browser'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 const emailjsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const emailjsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
@@ -143,9 +145,7 @@ export default function CTA() {
         <form ref={formRef} className="contact-panel reveal" onSubmit={handleSubmit} noValidate>
           <div className="contact-panel-title">
             <span className="contact-spark" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3l1.8 6.2L20 12l-6.2 1.8L12 20l-1.8-6.2L4 12l6.2-2.8L12 3z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-              </svg>
+              <FontAwesomeIcon icon={faPaperPlane} />
             </span>
             <h3>Start a conversation</h3>
           </div>

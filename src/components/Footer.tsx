@@ -1,7 +1,14 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+
 const contactPhone = import.meta.env.VITE_CONTACT_PHONE || ''
 const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || ''
 const contactInstagram = import.meta.env.VITE_CONTACT_INSTAGRAM || ''
 const contactLinkedIn = import.meta.env.VITE_CONTACT_LINKEDIN || ''
+const contactWhatsapp = import.meta.env.VITE_CONTACT_WHATSAPP || ''
+const waMessage = encodeURIComponent(
+  "Hi Madgen! I came across your work and wanted to know more about your services."
+)
 
 export default function Footer() {
   return (
@@ -10,7 +17,22 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <a href="#hero" className="logo"><img src="/madgen-logo.svg" alt="Madgen home" className="logo-img" /></a>
-            <p>A digital foundry for automation, product and brand — built as one connected system.</p>
+            <p>A digital foundry for automation product and brand — built as one connected system..</p>
+            <div className="footer-follow">
+              <h4>Follow Us</h4>
+              <div className="footer-follow-links">
+                {contactInstagram ? (
+                  <a href={contactInstagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <FontAwesomeIcon icon={faInstagram} size="lg" />
+                  </a>
+                ) : null}
+                {contactWhatsapp ? (
+                  <a href={`${contactWhatsapp}?text=${waMessage}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <FontAwesomeIcon icon={faWhatsapp} size="lg" />
+                  </a>
+                ) : null}
+              </div>
+            </div>
           </div>
           <div className="footer-cols">
             <div className="footer-col">
