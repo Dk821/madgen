@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -12,6 +13,7 @@ import Process from './components/Process'
 import Work from './components/Work'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import ServiceDetails from './pages/Service/ServiceDetails'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -127,9 +129,9 @@ function CursorGlow() {
   return null
 }
 
-export default function App() {
+function HomePage() {
   return (
-    <ThemeProvider>
+    <>
       <SmoothScroll />
       <ScrollReveals />
       <CursorGlow />
@@ -151,6 +153,31 @@ export default function App() {
       </main>
 
       <Footer />
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services/:slug" element={<ServiceDetailsWrapper />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
+  )
+}
+
+function ServiceDetailsWrapper() {
+  return (
+    <>
+      <CursorGlow />
+      <div className="grain" />
+      <div className="glow-cursor" id="glowCursor" />
+      <Header />
+      <ServiceDetails />
+    </>
   )
 }

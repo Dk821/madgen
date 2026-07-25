@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development That Builds Brands — Madgen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  :root{
+    --black:#050506;
+    --black-2:#0a0a0c;
+    --grey-950:#0e0f11;
+    --grey-900:#131417;
+    --grey-800:#1c1e22;
+    --grey-700:#2b2e33;
+    --grey-500:#585c63;
+    --grey-300:#9aa0a8;
+    --ink:#f2f3f5;
+    --ink-dim:#a2a7ae;
+    --ink-faint:#6a6e75;
+    --line:rgba(255,255,255,0.08);
+    --line-strong:rgba(255,255,255,0.16);
+    --glass:rgba(255,255,255,0.045);
+    --glass-2:rgba(255,255,255,0.075);
+    --glass-hi:rgba(255,255,255,0.14);
+    --silver:#d6d9de;
+    --silver-2:#f2f4f7;
+    --blur:22px;
+    --font-display:'Space Grotesk', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+    --ease:cubic-bezier(.16,.84,.44,1);
+  }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--black);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  img,svg{ display:block; }
+  section{ position:relative; z-index:1; }
+  .wrap{ max-width:1240px; margin:0 auto; padding:0 32px; }
+  ::selection{ background:var(--silver); color:var(--black); }
+
+  /* ---------- ambient background mesh ---------- */
+  .mesh{ position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; background:
+      radial-gradient(ellipse 120% 80% at 50% -10%, #17181b 0%, var(--black) 55%);
+  }
+  .orb{ position:absolute; border-radius:50%; filter:blur(90px); opacity:.55; will-change:transform; }
+  .orb-a{ width:640px; height:640px; top:-220px; left:-160px;
+    background:radial-gradient(circle at 30% 30%, rgba(210,214,220,0.22), rgba(120,124,132,0.05) 60%, transparent 75%);
+    animation:driftA 26s ease-in-out infinite; }
+  .orb-b{ width:520px; height:520px; top:280px; right:-200px;
+    background:radial-gradient(circle at 60% 40%, rgba(160,166,176,0.20), rgba(70,74,82,0.04) 60%, transparent 75%);
+    animation:driftB 32s ease-in-out infinite; }
+  .orb-c{ width:460px; height:460px; bottom:-160px; left:35%;
+    background:radial-gradient(circle at 50% 50%, rgba(230,232,236,0.14), transparent 70%);
+    animation:driftC 22s ease-in-out infinite; }
+  @keyframes driftA{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(60px,50px) scale(1.08);} }
+  @keyframes driftB{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(-70px,40px) scale(0.95);} }
+  @keyframes driftC{ 0%,100%{ transform:translate(-50%,0) scale(1);} 50%{ transform:translate(-42%,-30px) scale(1.1);} }
+  .grain{ position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  /* ---------- glass utility ---------- */
+  .glass{
+    background:linear-gradient(160deg, var(--glass-2), var(--glass));
+    border:1px solid var(--line);
+    backdrop-filter:blur(var(--blur)) saturate(120%);
+    -webkit-backdrop-filter:blur(var(--blur)) saturate(120%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.08), 0 20px 50px -25px rgba(0,0,0,0.7);
+  }
+
+  /* ---------- header ---------- */
+  header{ position:fixed; top:0; left:0; right:0; z-index:50; padding:18px 0; transition:padding .3s var(--ease); }
+  header.scrolled{ padding:10px 0; }
+  .navbar{ display:flex; align-items:center; justify-content:space-between; padding:12px 22px; border-radius:16px;
+    transition:box-shadow .3s ease; }
+  header.scrolled .navbar{ box-shadow:0 12px 40px -20px rgba(0,0,0,0.8); }
+  .logo{ display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:17px; letter-spacing:.01em; }
+  .logo-mark{ width:30px; height:30px; border-radius:9px; display:grid; place-items:center; font-size:15px;
+    background:linear-gradient(145deg,var(--silver-2),var(--grey-500)); color:#0a0a0b; box-shadow:0 4px 14px -4px rgba(0,0,0,.6); }
+  .nav-links{ display:flex; align-items:center; gap:34px; }
+  .nav-links a{ font-size:14px; color:var(--ink-dim); position:relative; padding:4px 0; transition:color .2s ease; }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-links a.active{ color:var(--ink); }
+  .nav-links a.active::after{ content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--silver); border-radius:2px; }
+  .mobile-cta{ display:none; }
+  .nav-cta{ display:flex; align-items:center; gap:12px; }
+  .burger{ display:none; width:38px; height:38px; border-radius:10px; align-items:center; justify-content:center; cursor:pointer; flex:none; background:none; border:none; padding:0; font:inherit; }
+  .burger span{ position:relative; width:16px; height:1.5px; background:var(--ink); transition:background .2s ease; }
+  .burger span::before, .burger span::after{ content:""; position:absolute; left:0; width:16px; height:1.5px; background:var(--ink); transition:transform .25s var(--ease), top .25s var(--ease), opacity .2s ease; }
+  .burger span::before{ top:-5px; } .burger span::after{ top:5px; }
+  .burger.open span{ background:transparent; }
+  .burger.open span::before{ top:0; transform:rotate(45deg); }
+  .burger.open span::after{ top:0; transform:rotate(-45deg); }
+
+  /* ---------- buttons ---------- */
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:11px; font-size:14px; font-weight:600;
+    cursor:pointer; white-space:nowrap; transition:transform .25s var(--ease), box-shadow .25s ease, background .25s ease; }
+  .btn:active{ transform:scale(.97); }
+  .btn-primary{ background:linear-gradient(145deg,var(--silver-2),var(--grey-300)); color:#0a0a0b; box-shadow:0 8px 26px -10px rgba(255,255,255,0.25); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 34px -12px rgba(255,255,255,0.4); }
+  .btn-ghost{ background:var(--glass); border:1px solid var(--line-strong); color:var(--ink); backdrop-filter:blur(10px); }
+  .btn-ghost:hover{ border-color:var(--silver); background:var(--glass-2); transform:translateY(-2px); }
+  .btn svg{ width:15px; height:15px; }
+
+  /* ---------- reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:190px 0 110px; overflow:hidden; }
+  .hero > .wrap{ position:relative; z-index:1; }
+  .side-rays{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .side-rays canvas{ width:100%; height:100%; display:block; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center; }
+  .eyebrow{ display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:11.5px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:22px; }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--grey-500); }
+  h1{ font-family:var(--font-display); font-weight:600; font-size:56px; line-height:1.06; letter-spacing:-.02em; }
+  h1 .shine{ background:linear-gradient(100deg, var(--ink) 20%, var(--silver-2) 40%, var(--grey-500) 50%, var(--ink) 70%);
+    background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:shine 6s linear infinite; }
+  @keyframes shine{ 0%{ background-position:180% 0;} 100%{ background-position:-40% 0;} }
+  .hero p.lead{ margin-top:22px; max-width:480px; color:var(--ink-dim); font-size:16px; }
+  .chips{ display:flex; gap:12px; margin-top:34px; flex-wrap:wrap; }
+  .chip{ display:flex; align-items:center; gap:11px; padding:13px 16px; border-radius:13px; min-width:150px; }
+  .chip .ic{ width:32px; height:32px; border-radius:9px; display:grid; place-items:center; background:var(--glass-2); border:1px solid var(--line); flex:none; }
+  .chip .ic svg{ width:16px; height:16px; stroke:var(--silver-2); }
+  .chip strong{ font-size:12.5px; display:block; }
+  .chip span{ font-size:11px; color:var(--ink-faint); }
+  .hero-actions{ display:flex; gap:14px; margin-top:38px; flex-wrap:wrap; }
+
+  /* hero visual — glass device composition */
+  .hero-visual{ position:relative; height:460px; perspective:1400px; }
+  .device{ position:absolute; border-radius:16px; }
+  .device-browser{ width:88%; left:2%; top:18%; height:280px; padding:0;
+    animation:bob1 7s ease-in-out infinite; transform:rotateY(-8deg) rotateX(4deg); transform-style:preserve-3d; }
+  .browser-bar{ display:flex; align-items:center; gap:6px; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .dot{ width:8px; height:8px; border-radius:50%; background:var(--grey-700); }
+  .browser-body{ padding:22px 24px; display:flex; flex-direction:column; gap:12px; }
+  .ghost-line{ height:9px; border-radius:5px; background:linear-gradient(90deg,var(--glass-2),transparent); }
+  .ghost-line.w1{ width:70%; } .ghost-line.w2{ width:46%; } .ghost-line.w3{ width:58%; }
+  .browser-glow{ margin-top:10px; width:120px; height:34px; border-radius:9px; background:linear-gradient(145deg,var(--silver-2),var(--grey-500)); opacity:.9; }
+  .device-phone{ width:150px; height:300px; right:2%; bottom:2%; padding:14px 12px;
+    animation:bob2 8s ease-in-out infinite; transform:rotateY(10deg) rotateX(-4deg); transform-style:preserve-3d; }
+  .phone-notch{ width:36px; height:5px; border-radius:3px; background:var(--grey-700); margin:0 auto 16px; }
+  .phone-body{ display:flex; flex-direction:column; gap:10px; }
+  .phone-glow{ margin-top:8px; height:60px; border-radius:10px; background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.16),transparent 70%); border:1px solid var(--line); }
+  @keyframes bob1{ 0%,100%{ transform:translateY(0) rotateY(-8deg) rotateX(4deg);} 50%{ transform:translateY(-14px) rotateY(-6deg) rotateX(3deg);} }
+  @keyframes bob2{ 0%,100%{ transform:translateY(0) rotateY(10deg) rotateX(-4deg);} 50%{ transform:translateY(-18px) rotateY(8deg) rotateX(-3deg);} }
+  .sweep{ position:absolute; inset:0; border-radius:inherit; overflow:hidden; pointer-events:none; }
+  .sweep::after{ content:""; position:absolute; top:-40%; left:-60%; width:40%; height:180%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,0.16), transparent);
+    transform:rotate(20deg); animation:sweepMove 5s ease-in-out infinite; }
+  @keyframes sweepMove{ 0%{ left:-60%;} 55%,100%{ left:130%;} }
+  .ring{ position:absolute; border-radius:50%; border:1px solid var(--line); opacity:.7; }
+  .ring-1{ width:400px; height:400px; top:6%; left:8%; animation:spin 40s linear infinite; }
+  .ring-2{ width:300px; height:300px; top:22%; left:22%; animation:spin 30s linear infinite reverse; }
+  @keyframes spin{ from{ transform:rotate(0);} to{ transform:rotate(360deg);} }
+
+  /* ---------- section heads ---------- */
+  .section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:40px; margin-bottom:52px; flex-wrap:wrap; }
+  .section-head h2{ font-family:var(--font-display); font-weight:600; font-size:34px; letter-spacing:-.01em; max-width:560px; line-height:1.18; margin-top:14px; }
+  .section-head p{ color:var(--ink-dim); font-size:14.5px; max-width:340px; }
+  section.pad{ padding:100px 0; }
+  .divider{ height:1px; background:linear-gradient(90deg,transparent,var(--line),transparent); }
+
+  /* ---------- services grid ---------- */
+  .do-layout{ display:grid; grid-template-columns:0.82fr 1.18fr; gap:64px; align-items:start; }
+  .do-list-label{ font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:18px; }
+  .do-list{ position:relative; display:flex; flex-direction:column; }
+  .do-list::before{ content:""; position:absolute; left:6px; top:6px; bottom:6px; width:1px; background:var(--line); }
+  .do-item{ display:flex; align-items:center; gap:16px; padding:15px 6px; cursor:pointer; position:relative; background:none; border:none;
+    text-align:left; width:100%; font-family:inherit; }
+  .do-dot-wrap{ position:relative; width:13px; height:13px; flex:none; display:grid; place-items:center; }
+  .do-dot{ width:13px; height:13px; border-radius:50%; background:var(--grey-800); border:1px solid var(--line-strong); position:relative; z-index:1;
+    transition:background .3s ease, box-shadow .3s ease, transform .3s ease; }
+  .do-item.active .do-dot{ background:var(--silver-2); box-shadow:0 0 0 5px rgba(255,255,255,0.10); transform:scale(1.05); }
+  .do-index{ font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); width:20px; flex:none; }
+  .do-item.active .do-index{ color:var(--ink-dim); }
+  .do-name-col{ display:flex; flex-direction:column; gap:8px; min-width:0; }
+  .do-name{ font-size:15.5px; color:var(--ink-faint); transition:color .3s ease; font-family:var(--font-display); font-weight:500; }
+  .do-item:hover .do-name{ color:var(--ink-dim); }
+  .do-item.active .do-name{ color:var(--ink); font-weight:600; }
+  .do-bar{ display:block; height:2px; width:100%; max-width:220px; background:var(--line); border-radius:2px; overflow:hidden; opacity:0; transition:opacity .25s ease; }
+  .do-item.active .do-bar{ opacity:1; }
+  .do-bar-fill{ display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--silver-2),var(--grey-300)); }
+  .do-item.active .do-bar-fill{ animation:barFill 3000ms linear forwards; }
+  @keyframes barFill{ from{ width:0%; } to{ width:100%; } }
+
+  .do-card{ position:relative; padding:46px 44px; border-radius:24px; min-height:400px; display:flex; flex-direction:column; overflow:hidden; }
+  .do-card::before{ content:""; position:absolute; inset:0; opacity:0; transition:opacity .4s ease; pointer-events:none;
+    background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%), rgba(255,255,255,0.08), transparent 70%); }
+  .do-card:hover::before{ opacity:1; }
+  .do-card::after{ content:""; position:absolute; width:300px; height:300px; border-radius:50%; right:-120px; top:-140px; pointer-events:none;
+    background:radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%); }
+  .do-card-top{ display:flex; align-items:flex-start; justify-content:space-between; position:relative; z-index:1; }
+  .do-badge{ width:46px; height:46px; border-radius:13px; display:grid; place-items:center; font-family:var(--font-display); font-weight:700; font-size:16px;
+    background:linear-gradient(150deg,var(--silver-2),var(--grey-500)); color:#0a0a0b; }
+  .do-icon-btn{ width:42px; height:42px; border-radius:12px; display:grid; place-items:center; }
+  .do-icon-btn svg{ width:18px; height:18px; stroke:var(--silver-2); }
+  .do-tag{ font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin-top:28px; position:relative; z-index:1; }
+  .do-card h3{ font-family:var(--font-display); font-weight:600; font-size:26px; margin-top:12px; position:relative; z-index:1; }
+  .do-card p{ font-size:14.5px; color:var(--ink-dim); margin-top:14px; max-width:460px; position:relative; z-index:1; }
+  .do-chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:auto; padding-top:30px; position:relative; z-index:1; }
+  .do-chip{ font-size:12px; color:var(--ink-dim); padding:8px 14px; border-radius:20px; border:1px solid var(--line); }
+  .do-card-body{ display:flex; flex-direction:column; height:100%; transition:opacity .25s ease, transform .25s ease; }
+  .do-card-body.fade{ opacity:0; transform:translateY(8px); }
+
+  /* ---------- process ---------- */
+  .process{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+  .p-step{ padding:30px 24px; border-radius:16px; position:relative; margin:0 8px; }
+  .p-num{ font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); position:absolute; top:22px; right:22px; }
+  .p-icon{ width:42px; height:42px; border-radius:11px; background:var(--glass-2); border:1px solid var(--line); display:grid; place-items:center; margin-bottom:22px; }
+  .p-icon svg{ width:19px; height:19px; stroke:var(--silver-2); }
+  .p-step h4{ font-family:var(--font-display); font-size:16px; margin-bottom:8px; }
+  .p-step p{ font-size:13px; color:var(--ink-dim); }
+  .p-line{ position:absolute; top:52px; left:100%; width:16px; height:1px; background:var(--line-strong); overflow:hidden; z-index:2; }
+  .p-line::after{ content:""; position:absolute; inset:0; background:var(--silver); transform:scaleX(0); transform-origin:left; transition:transform 1s var(--ease); }
+  .p-line.in::after{ transform:scaleX(1); }
+
+  /* ---------- stats ---------- */
+  .stats-bar{ display:grid; grid-template-columns:repeat(4,1fr); border-radius:20px; overflow:hidden; }
+  .stat{ padding:34px 28px; text-align:left; border-right:1px solid var(--line); }
+  .stat:last-child{ border-right:none; }
+  .stat .num{ font-family:var(--font-display); font-size:36px; font-weight:600; letter-spacing:-.01em;
+    background:linear-gradient(160deg,var(--silver-2),var(--grey-300)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .stat .lbl{ font-size:13px; margin-top:6px; color:var(--ink); }
+  .stat .sub{ font-size:12px; color:var(--ink-faint); margin-top:4px; }
+
+  /* ---------- tech strip ---------- */
+  .tech-marquee{ display:flex; flex-direction:column; gap:16px; }
+  .tm-row{ position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent); mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent); }
+  .tm-track{ display:flex; gap:14px; width:max-content; will-change:transform; padding:2px 0; }
+  .tech-pill{ display:flex; align-items:center; gap:10px; padding:12px 18px; border-radius:12px; font-size:13.5px; font-weight:500; flex:none; }
+  .tech-pill .dot2{ width:8px; height:8px; border-radius:50%; background:var(--grey-300); }
+
+  /* ---------- cta ---------- */
+  .cta-panel{ border-radius:26px; padding:64px 56px; position:relative; overflow:hidden; display:flex; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap; }
+  .cta-panel::before{ content:""; position:absolute; width:500px; height:500px; border-radius:50%; right:-160px; top:-200px;
+    background:radial-gradient(circle,rgba(255,255,255,0.12),transparent 70%); animation:driftA 18s ease-in-out infinite; }
+  .cta-panel h3{ font-family:var(--font-display); font-weight:600; font-size:30px; max-width:420px; line-height:1.2; }
+  .cta-panel p{ color:var(--ink-dim); margin-top:12px; max-width:380px; font-size:14px; }
+  .cta-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  /* ---------- footer ---------- */
+  /* ---------- faq ---------- */
+  .faq-wrap{ max-width:820px; }
+  .faq-list{ display:flex; flex-direction:column; gap:16px; }
+  .faq-item{ border-radius:18px; position:relative; overflow:hidden; transition:border-color .35s ease; }
+  .faq-item::before{ content:""; position:absolute; inset:0; opacity:0; transition:opacity .4s ease; pointer-events:none;
+    background:radial-gradient(280px circle at var(--mx,50%) var(--my,0%), rgba(255,255,255,0.08), transparent 70%); }
+  .faq-item:hover::before, .faq-item.open::before{ opacity:1; }
+  .faq-item.open{ border-color:var(--line-strong); }
+  .faq-q{ position:relative; z-index:1; width:100%; display:flex; align-items:center; gap:20px; padding:24px 26px; background:none; border:none;
+    cursor:pointer; text-align:left; font-family:inherit; color:inherit; }
+  .faq-icon{ width:38px; height:38px; border-radius:50%; border:1px solid var(--line-strong); background:var(--glass-2); display:grid; place-items:center; flex:none; }
+  .faq-icon svg{ width:15px; height:15px; stroke:var(--silver-2); transition:transform .4s var(--ease); }
+  .faq-item.open .faq-icon svg{ transform:rotate(45deg); }
+  .faq-q-body{ flex:1; display:flex; flex-direction:column; gap:8px; min-width:0; }
+  .faq-q-top{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .faq-q-text{ font-family:var(--font-display); font-weight:600; font-size:16.5px; }
+  .faq-meta{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint);
+    border:1px solid var(--line); border-radius:20px; padding:4px 11px; margin-left:auto; flex:none; }
+  .faq-a-wrap{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .45s var(--ease); position:relative; z-index:1; }
+  .faq-item.open .faq-a-wrap{ grid-template-rows:1fr; }
+  .faq-a-inner{ overflow:hidden; }
+  .faq-a-inner p{ font-size:13.5px; color:var(--ink-dim); padding:0 26px 24px 74px; max-width:560px; }
+
+  /* ---------- footer ---------- */
+  footer{ padding:70px 0 30px; border-top:1px solid var(--line); margin-top:40px; }
+  .footer-top{ display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:50px; }
+  .footer-brand p{ color:var(--ink-dim); font-size:13.5px; max-width:280px; margin-top:14px; }
+  .footer-cols{ display:flex; gap:64px; flex-wrap:wrap; }
+  .footer-col h4{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:16px; }
+  .footer-col a{ display:block; color:var(--ink-dim); font-size:13.5px; margin-bottom:11px; transition:color .2s ease; }
+  .footer-col a:hover{ color:var(--ink); }
+  .footer-bottom{ display:flex; justify-content:space-between; padding-top:26px; border-top:1px solid var(--line); font-size:12.5px; color:var(--ink-faint); flex-wrap:wrap; gap:12px; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ height:340px; order:-1; }
+    h1{ font-size:42px; }
+    .do-layout{ grid-template-columns:1fr; gap:32px; }
+    .do-card{ min-height:340px; padding:36px 32px; }
+    .process{ grid-template-columns:repeat(2,1fr); gap:16px; }
+    .p-line{ display:none; }
+    .stats-bar{ grid-template-columns:repeat(2,1fr); }
+    .stat{ border-bottom:1px solid var(--line); }
+    .cta-panel{ padding:44px 28px; }
+  }
+  @media (max-width:640px){
+    .wrap{ padding:0 20px; }
+    .nav-links{ position:fixed; top:74px; left:16px; right:16px; flex-direction:column; align-items:flex-start;
+      padding:20px; border-radius:16px; gap:18px; transform:translateY(-12px); opacity:0; pointer-events:none; transition:.3s var(--ease); }
+    .nav-links.open{ transform:translateY(0); opacity:1; pointer-events:auto; }
+    .nav-links a{ font-size:15px; }
+    .burger{ display:flex; }
+    .mobile-cta{ display:flex; flex-direction:column; gap:10px; width:100%; padding-top:14px; border-top:1px solid var(--line); }
+    .mobile-cta .btn{ width:100%; justify-content:center; }
+    .nav-cta .btn-ghost, .nav-cta .btn-primary{ display:none; }
+    .hero{ padding:150px 0 70px; }
+    h1{ font-size:34px; }
+    .do-card{ padding:28px 24px; }
+    .do-card h3{ font-size:21px; }
+    .do-badge{ width:40px; height:40px; }
+    .process{ grid-template-columns:1fr; }
+    .stats-bar{ grid-template-columns:1fr; }
+    .stat{ text-align:left; }
+    .section-head{ margin-bottom:36px; }
+    .faq-q{ padding:20px 18px; gap:14px; }
+    .faq-meta{ margin-left:0; }
+    .faq-a-inner p{ padding:0 18px 20px 62px; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="mesh"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div></div>
+<div class="grain"></div>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <div class="navbar glass">
+      <a href="#" class="logo"><span class="logo-mark">M</span>MADGEN</a>
+      <nav class="nav-links glass" id="navLinks">
+        <a href="#hero" data-nav="hero">About</a>
+        <a href="#services" data-nav="services">Services</a>
+        <a href="#why" data-nav="why">Why Us</a>
+        <a href="#process" data-nav="process">Process</a>
+        <a href="#tech" data-nav="tech">Work</a>
+        <a href="#" data-nav="">Blog</a>
+        <div class="mobile-cta">
+          <a href="#" class="btn btn-ghost">Talk to us</a>
+          <a href="#" class="btn btn-primary">Start a Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </nav>
+      <div class="nav-cta">
+        <a href="#" class="btn btn-ghost">Talk to us</a>
+        <a href="#" class="btn btn-primary">Start a Project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="side-rays" id="sideRays" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow reveal">Our Service</div>
+      <h1 class="reveal">Web Development<br>That Builds <span class="shine">Brands</span></h1>
+      <p class="lead reveal">We build fast, secure, and scalable websites and web applications that deliver exceptional user experiences — engineered in glass-clean code and shipped with intent.</p>
+
+      <div class="chips reveal">
+        <div class="chip glass">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+          <div><strong>High Performance</strong><span>Optimized for speed</span></div>
+        </div>
+        <div class="chip glass">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/></svg></div>
+          <div><strong>Secure & Reliable</strong><span>Clean, safe code</span></div>
+        </div>
+        <div class="chip glass">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="14" height="10" rx="1"/><rect x="15" y="16" width="6" height="4" rx="1"/></svg></div>
+          <div><strong>Responsive Design</strong><span>Pixel-perfect, all devices</span></div>
+        </div>
+      </div>
+
+      <div class="hero-actions reveal">
+        <a href="#" class="btn btn-primary">Talk to our experts
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">View our work</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="device device-browser glass">
+        <div class="sweep"></div>
+        <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="browser-body">
+          <div class="ghost-line w1"></div>
+          <div class="ghost-line w2"></div>
+          <div class="ghost-line w3"></div>
+          <div class="browser-glow"></div>
+        </div>
+      </div>
+      <div class="device device-phone glass">
+        <div class="sweep"></div>
+        <div class="phone-notch"></div>
+        <div class="phone-body">
+          <div class="ghost-line w1"></div>
+          <div class="ghost-line w2"></div>
+          <div class="phone-glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- TECH -->
+<section class="pad" id="tech">
+  <div class="wrap">
+    <div class="tech-marquee reveal">
+      <div class="tm-row"><div class="tm-track" id="tmTrack1"></div></div>
+      <div class="tm-row"><div class="tm-track" id="tmTrack2"></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- SERVICES -->
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">What We Do</div>
+        <h2 class="reveal">End-to-end web development, shaped around your brand.</h2>
+      </div>
+      <p class="reveal">From concept to deployment, we build digital products that are fast, secure, and made to grow with you.</p>
+    </div>
+
+    <div class="do-layout reveal">
+      <div class="do-left">
+        <div class="do-list-label">Service Index</div>
+        <ul class="do-list" id="doList" role="tablist">
+          <li><button class="do-item active" data-index="0" role="tab" aria-selected="true">
+            <span class="do-dot-wrap"><span class="do-dot"></span></span>
+            <span class="do-index">01</span>
+            <span class="do-name-col"><span class="do-name">Custom Website Development</span><span class="do-bar"><span class="do-bar-fill"></span></span></span>
+          </button></li>
+          <li><button class="do-item" data-index="1" role="tab" aria-selected="false">
+            <span class="do-dot-wrap"><span class="do-dot"></span></span>
+            <span class="do-index">02</span>
+            <span class="do-name-col"><span class="do-name">Web Application Development</span><span class="do-bar"><span class="do-bar-fill"></span></span></span>
+          </button></li>
+          <li><button class="do-item" data-index="2" role="tab" aria-selected="false">
+            <span class="do-dot-wrap"><span class="do-dot"></span></span>
+            <span class="do-index">03</span>
+            <span class="do-name-col"><span class="do-name">E-commerce Development</span><span class="do-bar"><span class="do-bar-fill"></span></span></span>
+          </button></li>
+          <li><button class="do-item" data-index="3" role="tab" aria-selected="false">
+            <span class="do-dot-wrap"><span class="do-dot"></span></span>
+            <span class="do-index">04</span>
+            <span class="do-name-col"><span class="do-name">UI/UX Design</span><span class="do-bar"><span class="do-bar-fill"></span></span></span>
+          </button></li>
+          <li><button class="do-item" data-index="4" role="tab" aria-selected="false">
+            <span class="do-dot-wrap"><span class="do-dot"></span></span>
+            <span class="do-index">05</span>
+            <span class="do-name-col"><span class="do-name">CMS Development</span><span class="do-bar"><span class="do-bar-fill"></span></span></span>
+          </button></li>
+          <li><button class="do-item" data-index="5" role="tab" aria-selected="false">
+            <span class="do-dot-wrap"><span class="do-dot"></span></span>
+            <span class="do-index">06</span>
+            <span class="do-name-col"><span class="do-name">Maintenance & Support</span><span class="do-bar"><span class="do-bar-fill"></span></span></span>
+          </button></li>
+        </ul>
+      </div>
+      <div class="do-right">
+        <div class="do-card glass" id="doCard"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="pad" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">How We Work</div>
+        <h2 class="reveal">A simple process. Powerful results.</h2>
+      </div>
+      <a href="#" class="btn btn-ghost reveal">Our process
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="process">
+      <div class="p-step glass reveal">
+        <span class="p-num">01</span>
+        <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.5.5.8 1 .8 1.7V16h6.4v-.8c0-.7.3-1.2.8-1.7A6 6 0 0012 3z"/></svg></div>
+        <h4>Discover</h4>
+        <p>We learn your business, goals, and audience to define the right approach.</p>
+        <div class="p-line"></div>
+      </div>
+      <div class="p-step glass reveal">
+        <span class="p-num">02</span>
+        <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+        <h4>Design</h4>
+        <p>Clean, modern, engaging interfaces built around the user.</p>
+        <div class="p-line"></div>
+      </div>
+      <div class="p-step glass reveal">
+        <span class="p-num">03</span>
+        <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+        <h4>Develop</h4>
+        <p>Fast, secure, and scalable code, shipped with precision.</p>
+        <div class="p-line"></div>
+      </div>
+      <div class="p-step glass reveal">
+        <span class="p-num">04</span>
+        <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 013-9c2-2 4-3 7-3s5 1 7 3-1 5-3 7a22 22 0 01-9 3l-3-3z"/></svg></div>
+        <h4>Deploy & Support</h4>
+        <p>We launch your solution and stay on for long-term success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="pad" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">Why Choose Madgen</div>
+        <h2 class="reveal">We don't just build websites. We build growth engines.</h2>
+      </div>
+      <p class="reveal">We combine design, technology, and strategy to deliver digital solutions that drive real results.</p>
+    </div>
+
+    <div class="stats-bar glass reveal">
+      <div class="stat">
+        <div class="num" data-count="500" data-suffix="+">0</div>
+        <div class="lbl">Websites Delivered</div>
+        <div class="sub">Across 30+ industries</div>
+      </div>
+      <div class="stat">
+        <div class="num" data-count="98" data-suffix="%">0</div>
+        <div class="lbl">On-Time Delivery</div>
+        <div class="sub">Every single time</div>
+      </div>
+      <div class="stat">
+        <div class="num" data-count="4.9" data-suffix="/5" data-decimal="1">0</div>
+        <div class="lbl">Client Satisfaction</div>
+        <div class="sub">Rated by our clients</div>
+      </div>
+      <div class="stat">
+        <div class="num" data-count="100" data-suffix="%">0</div>
+        <div class="lbl">Secure & Reliable</div>
+        <div class="sub">Security-first approach</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+
+<section class="pad">
+  <div class="wrap">
+    <div class="cta-panel glass reveal">
+      <div>
+        <div class="eyebrow">Let's Work Together</div>
+        <h3>Ready to build something amazing together?</h3>
+        <p>Let's turn your ideas into powerful digital experiences that make an impact.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="#" class="btn btn-primary">Start a Project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <a href="#" class="btn btn-ghost">Schedule a Call
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0122 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pad" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">FAQ</div>
+        <h2 class="reveal">Answers to what you're probably wondering.</h2>
+      </div>
+      <p class="reveal">Straight talk on how we work, before you ever sign anything.</p>
+    </div>
+
+    <div class="faq-wrap">
+      <ul class="faq-list" id="faqList">
+        <li class="faq-item glass open reveal">
+          <button class="faq-q" aria-expanded="true">
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            <span class="faq-q-body">
+              <span class="faq-q-top"><span class="faq-q-text">How do you decide what to build first?</span><span class="faq-meta">Discovery</span></span>
+            </span>
+          </button>
+          <div class="faq-a-wrap"><div class="faq-a-inner"><p>We map every idea against impact, feasibility, and effort, then prototype the riskiest assumption within the first few days — so early progress proves the direction, not just fills a timeline.</p></div></div>
+        </li>
+        <li class="faq-item glass reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            <span class="faq-q-body">
+              <span class="faq-q-top"><span class="faq-q-text">What does the workflow look like once we start?</span><span class="faq-meta">Collaboration</span></span>
+            </span>
+          </button>
+          <div class="faq-a-wrap"><div class="faq-a-inner"><p>A dedicated design + engineering pair works from a shared board you have full visibility into. Decisions get logged inline, so you're never chasing an update in a separate thread.</p></div></div>
+        </li>
+        <li class="faq-item glass reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            <span class="faq-q-body">
+              <span class="faq-q-top"><span class="faq-q-text">Can you work with our existing stack or design system?</span><span class="faq-meta">Systems</span></span>
+            </span>
+          </button>
+          <div class="faq-a-wrap"><div class="faq-a-inner"><p>Yes — we map your existing tokens, components, and build steps into our process from day one. Where a gap shows up, we patch it with tests so speed never comes at the cost of consistency.</p></div></div>
+        </li>
+        <li class="faq-item glass reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            <span class="faq-q-body">
+              <span class="faq-q-top"><span class="faq-q-text">How is quality checked before launch?</span><span class="faq-meta">Quality</span></span>
+            </span>
+          </button>
+          <div class="faq-a-wrap"><div class="faq-a-inner"><p>Accessibility passes, visual regression checks, and performance budgets run on every merge. Nothing ships until it holds up on real devices, not just in a preview link.</p></div></div>
+        </li>
+        <li class="faq-item glass reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            <span class="faq-q-body">
+              <span class="faq-q-top"><span class="faq-q-text">How long does a typical project take?</span><span class="faq-meta">Timeline</span></span>
+            </span>
+          </button>
+          <div class="faq-a-wrap"><div class="faq-a-inner"><p>A focused marketing site usually lands in 3–5 weeks; a full web app is closer to 8–14 depending on scope. You'll get a clear milestone plan before any work begins, not a vague estimate.</p></div></div>
+        </li>
+        <li class="faq-item glass reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            <span class="faq-q-body">
+              <span class="faq-q-top"><span class="faq-q-text">What happens after launch?</span><span class="faq-meta">Support</span></span>
+            </span>
+          </button>
+          <div class="faq-a-wrap"><div class="faq-a-inner"><p>Every project rolls into a maintenance window by default — monitoring, security patches, and small fixes are covered, with clear options if you want an ongoing retainer beyond that.</p></div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="logo-mark">M</span>MADGEN</a>
+        <p>We build fast, secure, and scalable digital experiences for brands that want to grow.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#">Web Development</a>
+          <a href="#">UI/UX Design</a>
+          <a href="#">E-commerce</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Work</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="#">hello@madgen.studio</a>
+          <a href="#">Start a Project</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Madgen. All rights reserved.</span>
+      <span>Crafted with glass, grit, and code.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  // mobile nav
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  function setMenu(open){
+    navLinks.classList.toggle('open', open);
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  }
+  burger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !burger.contains(e.target)) setMenu(false);
+  });
+
+  // scroll-spy: highlight the nav link for the section in view
+  const navAnchors = Array.from(navLinks.querySelectorAll('a[data-nav]')).filter(a => a.getAttribute('href').startsWith('#') && a.getAttribute('href').length > 1);
+  const spySections = navAnchors.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  function updateSpy(){
+    let current = spySections[0];
+    const y = window.scrollY + window.innerHeight * 0.3;
+    spySections.forEach(sec => { if (sec.offsetTop <= y) current = sec; });
+    navAnchors.forEach(a => a.classList.toggle('active', document.querySelector(a.getAttribute('href')) === current));
+  }
+  window.addEventListener('scroll', updateSpy, { passive:true });
+  updateSpy();
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('in'), (i % 6) * 90);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // process connector lines draw-in
+  document.querySelectorAll('.p-line').forEach(line => {
+    const lo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { line.classList.add('in'); lo.unobserve(line); }
+      });
+    }, { threshold: 0.4 });
+    lo.observe(line);
+  });
+
+  // counter animation
+  document.querySelectorAll('.num').forEach(el => {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const decimal = parseInt(el.dataset.decimal || '0');
+    const co = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          let start = 0;
+          const duration = 1400;
+          const startTime = performance.now();
+          function tick(now){
+            const p = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            const val = target * eased;
+            el.textContent = val.toFixed(decimal) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+          co.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+    co.observe(el);
+  });
+
+  // card cursor-glow tracking
+  document.querySelectorAll('.do-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - r.left) / r.width) * 100 + '%');
+      card.style.setProperty('--my', ((e.clientY - r.top) / r.height) * 100 + '%');
+    });
+  });
+
+  // hero visual parallax
+  const visual = document.querySelector('.hero-visual');
+  if (visual && window.matchMedia('(min-width: 981px)').matches) {
+    document.querySelector('.hero').addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 16;
+      const y = (e.clientY / window.innerHeight - 0.5) * 16;
+      visual.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  }
+</script>
+
+<script>
+/* =========================================================
+   SIDE RAYS — vanilla WebGL port of the React Bits shader,
+   recolored to the site's black/grey/silver glass palette.
+   ========================================================= */
+(function(){
+  const container = document.getElementById('sideRays');
+  if (!container) return;
+
+  const hexToRgb = hex => {
+    const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return m ? [parseInt(m[1],16)/255, parseInt(m[2],16)/255, parseInt(m[3],16)/255] : [1,1,1];
+  };
+  const originToFlip = origin => {
+    switch(origin){
+      case 'top-right': return [1,0];
+      case 'bottom-right': return [1,1];
+      case 'bottom-left': return [0,1];
+      default: return [0,0]; // top-left
+    }
+  };
+
+  const opts = {
+    speed: 1.2,
+    rayColor1: '#eef0f3',   // soft silver
+    rayColor2: '#6b7280',   // slate grey
+    intensity: 1.5,
+    spread: 1.9,
+    origin: 'top-left',
+    tilt: 0,
+    saturation: 0.35,       // near-mono, brand-consistent
+    blend: 0.55,
+    falloff: 1.9,
+    opacity: 0.6
+  };
+
+  const vertSrc = `
+    attribute vec2 position;
+    void main(){ gl_Position = vec4(position, 0.0, 1.0); }
+  `;
+  const fragSrc = `
+    precision highp float;
+    uniform float iTime;
+    uniform vec2 iResolution;
+    uniform float iSpeed;
+    uniform vec3 iRayColor1;
+    uniform vec3 iRayColor2;
+    uniform float iIntensity;
+    uniform float iSpread;
+    uniform float iFlipX;
+    uniform float iFlipY;
+    uniform float iTilt;
+    uniform float iSaturation;
+    uniform float iBlend;
+    uniform float iFalloff;
+    uniform float iOpacity;
+
+    float rayStrength(vec2 raySource, vec2 rayRefDirection, vec2 coord, float seedA, float seedB, float speed){
+      vec2 sourceToCoord = coord - raySource;
+      float cosAngle = dot(normalize(sourceToCoord), rayRefDirection);
+      return clamp(
+        (0.45 + 0.15 * sin(cosAngle * seedA + iTime * speed)) +
+        (0.3 + 0.2 * cos(-cosAngle * seedB + iTime * speed)),
+        0.0, 1.0) *
+        clamp((iResolution.x - length(sourceToCoord)) / iResolution.x, 0.5, 1.0);
+    }
+
+    void main(){
+      vec2 fragCoord = gl_FragCoord.xy;
+      if (iFlipX > 0.5) fragCoord.x = iResolution.x - fragCoord.x;
+      if (iFlipY > 0.5) fragCoord.y = iResolution.y - fragCoord.y;
+
+      vec2 coord = vec2(fragCoord.x, iResolution.y - fragCoord.y);
+      vec2 rayPos = vec2(iResolution.x * 1.1, -0.5 * iResolution.y);
+
+      float tiltRad = iTilt * 3.14159265 / 180.0;
+      float cs = cos(tiltRad);
+      float sn = sin(tiltRad);
+      vec2 rel = coord - rayPos;
+      vec2 tiltedCoord = vec2(rel.x * cs - rel.y * sn, rel.x * sn + rel.y * cs) + rayPos;
+
+      float halfSpread = iSpread * 0.275;
+      vec2 rayRefDir1 = normalize(vec2(cos(0.785398 + halfSpread), sin(0.785398 + halfSpread)));
+      vec2 rayRefDir2 = normalize(vec2(cos(0.785398 - halfSpread), sin(0.785398 - halfSpread)));
+
+      vec4 rays1 = vec4(iRayColor1, 1.0) * rayStrength(rayPos, rayRefDir1, tiltedCoord, 36.2214, 21.11349, iSpeed);
+      vec4 rays2 = vec4(iRayColor2, 1.0) * rayStrength(rayPos, rayRefDir2, tiltedCoord, 22.3991, 18.0234, iSpeed * 0.2);
+
+      vec4 color = rays1 * (1.0 - iBlend) * 0.9 + rays2 * iBlend * 0.9;
+
+      float distanceToLight = length(fragCoord.xy - vec2(rayPos.x, iResolution.y - rayPos.y)) / iResolution.y;
+      float brightness = iIntensity * 0.4 / pow(max(distanceToLight, 0.001), iFalloff);
+      color.rgb *= brightness;
+
+      float gray = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+      color.rgb = mix(vec3(gray), color.rgb, iSaturation);
+
+      color.a = max(color.r, max(color.g, color.b)) * iOpacity;
+      gl_FragColor = color;
+    }
+  `;
+
+  const canvas = document.createElement('canvas');
+  container.appendChild(canvas);
+  const gl = canvas.getContext('webgl', { alpha:true, premultipliedAlpha:true }) ||
+             canvas.getContext('experimental-webgl', { alpha:true });
+  if (!gl) return; // no WebGL support — leave the glass background as-is
+
+  function compile(type, src){
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const program = gl.createProgram();
+  gl.attachShader(program, compile(gl.VERTEX_SHADER, vertSrc));
+  gl.attachShader(program, compile(gl.FRAGMENT_SHADER, fragSrc));
+  gl.linkProgram(program);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)){
+    console.warn('SideRays: shader link failed', gl.getProgramInfoLog(program));
+    return;
+  }
+  gl.useProgram(program);
+
+  // full-viewport triangle (no quad needed)
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+  const posLoc = gl.getAttribLocation(program, 'position');
+  gl.enableVertexAttribArray(posLoc);
+  gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+  const u = {};
+  ['iTime','iSpeed','iIntensity','iSpread','iFlipX','iFlipY','iTilt','iSaturation','iBlend','iFalloff','iOpacity'].forEach(n => u[n] = gl.getUniformLocation(program, n));
+  u.iResolution = gl.getUniformLocation(program, 'iResolution');
+  u.iRayColor1 = gl.getUniformLocation(program, 'iRayColor1');
+  u.iRayColor2 = gl.getUniformLocation(program, 'iRayColor2');
+
+  const [flipX, flipY] = originToFlip(opts.origin);
+  const c1 = hexToRgb(opts.rayColor1), c2 = hexToRgb(opts.rayColor2);
+
+  function resize(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = container.clientWidth, h = container.clientHeight;
+    canvas.width = Math.max(1, w * dpr);
+    canvas.height = Math.max(1, h * dpr);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let rafId = null, running = false;
+  function frame(t){
+    if (!running) return;
+    gl.uniform1f(u.iTime, t * 0.001);
+    gl.uniform2f(u.iResolution, canvas.width, canvas.height);
+    gl.uniform1f(u.iSpeed, opts.speed);
+    gl.uniform3f(u.iRayColor1, c1[0], c1[1], c1[2]);
+    gl.uniform3f(u.iRayColor2, c2[0], c2[1], c2[2]);
+    gl.uniform1f(u.iIntensity, opts.intensity);
+    gl.uniform1f(u.iSpread, opts.spread);
+    gl.uniform1f(u.iFlipX, flipX);
+    gl.uniform1f(u.iFlipY, flipY);
+    gl.uniform1f(u.iTilt, opts.tilt);
+    gl.uniform1f(u.iSaturation, opts.saturation);
+    gl.uniform1f(u.iBlend, opts.blend);
+    gl.uniform1f(u.iFalloff, opts.falloff);
+    gl.uniform1f(u.iOpacity, opts.opacity);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    rafId = requestAnimationFrame(frame);
+  }
+  function start(){ if (!running){ running = true; rafId = requestAnimationFrame(frame); } }
+  function stop(){ running = false; if (rafId) cancelAnimationFrame(rafId); }
+
+  // only render while the hero is on screen — mirrors the source component's IntersectionObserver gate
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting ? start() : stop());
+  }, { threshold: 0.05 });
+  io.observe(container);
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    resize(); gl.uniform1f(u.iTime, 0); // draw a single static frame, no loop
+  }
+})();
+</script>
+
+<script>
+/* =========================================================
+   TECH STACK SCROLL VELOCITY — vanilla port of the React Bits
+   ScrollVelocity marquee: two rows, opposite directions, speed
+   reacts to how fast the page is being scrolled.
+   ========================================================= */
+(function(){
+  const stack = [
+    'Next.js','React','TypeScript','Tailwind CSS','Node.js','MongoDB','PostgreSQL','AWS','GraphQL','Docker','& More'
+  ];
+  const pill = name => `<div class="tech-pill glass"><span class="dot2"></span>${name}</div>`;
+  const NUM_COPIES = 4;
+
+  function fillTrack(track, order){
+    let html = '';
+    for (let i = 0; i < NUM_COPIES; i++) html += order.map(pill).join('');
+    track.innerHTML = html;
+  }
+
+  const track1 = document.getElementById('tmTrack1');
+  const track2 = document.getElementById('tmTrack2');
+  if (!track1 || !track2) return;
+
+  fillTrack(track1, stack);
+  fillTrack(track2, [...stack].reverse());
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // shared scroll-velocity tracker (mirrors useVelocity + spring smoothing)
+  let lastY = window.scrollY, smoothVel = 0, rawVel = 0;
+  function sampleScrollVelocity(dt){
+    const y = window.scrollY;
+    rawVel = dt > 0 ? (y - lastY) / (dt / 1000) : 0;
+    lastY = y;
+    // spring-like damping toward the raw value
+    smoothVel += (rawVel - smoothVel) * Math.min(1, dt / 120);
+  }
+  function velocityFactor(){
+    // maps px/s velocity to a movement multiplier, like velocityMapping {input:[0,1000], output:[0,5]}
+    const mapped = (Math.abs(smoothVel) / 1000) * 5 * Math.sign(smoothVel);
+    return Math.max(-6, Math.min(6, mapped));
+  }
+
+  function makeRow(track, baseVelocity){
+    let pos = 0;
+    let copyWidth = 0;
+    let direction = 1;
+    function measure(){ copyWidth = track.scrollWidth / NUM_COPIES || 1; }
+    measure();
+    window.addEventListener('resize', measure);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    return function tick(dt){
+      const vf = velocityFactor();
+      let moveBy = direction * baseVelocity * (dt / 1000);
+      if (vf < 0) direction = -1; else if (vf > 0) direction = 1;
+      moveBy += direction * moveBy * vf;
+      const range = copyWidth;
+      pos = ((pos + moveBy) % range + range) % range; // bounded accumulator, always in [0, range)
+      track.style.transform = `translateX(${-pos}px)`;
+    };
+  }
+
+  const row1 = makeRow(track1, 40);
+  const row2 = makeRow(track2, -40);
+
+  if (reduceMotion){
+    track1.style.transform = 'translateX(0)';
+    track2.style.transform = 'translateX(0)';
+    return;
+  }
+
+  let last = performance.now();
+  function loop(now){
+    const dt = now - last;
+    last = now;
+    sampleScrollVelocity(dt);
+    row1(dt);
+    row2(dt);
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+
+<script>
+/* =========================================================
+   WHAT WE DO — left list drives a right-side detail card.
+   Click any item to switch; otherwise it auto-advances every
+   3s, and the progress bar under the active item tracks it.
+   ========================================================= */
+(function(){
+  const listEl = document.getElementById('doList');
+  const cardEl = document.getElementById('doCard');
+  if (!listEl || !cardEl) return;
+
+  const icon = {
+    grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
+    spark: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>',
+    cart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M1 1h4l2.6 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>',
+    pen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>',
+    globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>',
+    gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1 1.55V21a2 2 0 01-4 0v-.09a1.7 1.7 0 00-1-1.55 1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.7 1.7 0 00.34-1.87 1.7 1.7 0 00-1.55-1H3a2 2 0 010-4h.09a1.7 1.7 0 001.55-1 1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06a1.7 1.7 0 001.87.34H9a1.7 1.7 0 001-1.55V3a2 2 0 014 0v.09a1.7 1.7 0 001 1.55 1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06a1.7 1.7 0 00-.34 1.87V9a1.7 1.7 0 001.55 1H21a2 2 0 010 4h-.09a1.7 1.7 0 00-1.55 1z"/></svg>',
+    arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>'
+  };
+
+  const data = [
+    { n:'01', tag:'// Sites / Landing', title:'Custom Website Development',
+      desc:'Beautiful, fast, modern websites engineered from the ground up around your brand — no bloated templates, no shortcuts.',
+      chips:['Business websites','Landing pages','Corporate sites','Custom solutions'], icon:icon.grid },
+    { n:'02', tag:'// SaaS / Dashboards', title:'Web Application Development',
+      desc:'Powerful web apps that streamline operations and drive growth, built for scale from day one.',
+      chips:['SaaS applications','Admin dashboards','CRM & ERP systems','API development'], icon:icon.spark },
+    { n:'03', tag:'// Shopify / Carts', title:'E-commerce Development',
+      desc:'Scalable online stores with seamless shopping experiences, engineered to convert.',
+      chips:['Shopify','Custom carts','Payment integration'], icon:icon.cart },
+    { n:'04', tag:'// Wireframes / Systems', title:'UI/UX Design',
+      desc:'User-centered designs that look stunning and convert visitors into customers.',
+      chips:['Wireframing','Prototyping','Design systems'], icon:icon.pen },
+    { n:'05', tag:'// WordPress / Headless', title:'CMS Development',
+      desc:'Easy-to-manage websites with powerful content management systems.',
+      chips:['WordPress','Webflow','Headless CMS'], icon:icon.globe },
+    { n:'06', tag:'// Security / Uptime', title:'Maintenance & Support',
+      desc:'Keep your website secure, updated, and performing at its best, around the clock.',
+      chips:['Bug fixes & updates','Security monitoring','24/7 support'], icon:icon.gear }
+  ];
+
+  const items = Array.from(listEl.querySelectorAll('.do-item'));
+  let active = 0;
+  let timer = null;
+  const AUTOPLAY_MS = 3000;
+
+  function renderCard(i){
+    const d = data[i];
+    cardEl.innerHTML = `
+      <div class="do-card-body">
+        <div class="do-card-top">
+          <div class="do-badge">${d.n}</div>
+          <div class="do-icon-btn glass">${d.icon}</div>
+        </div>
+        <div class="do-tag">${d.tag}</div>
+        <h3>${d.title}</h3>
+        <p>${d.desc}</p>
+        <div class="do-chips">${d.chips.map(c => `<span class="do-chip">${c}</span>`).join('')}</div>
+      </div>`;
+  }
+
+  function setActive(i, opts){
+    opts = opts || {};
+    if (i === active && !opts.force) return;
+    active = i;
+    items.forEach((btn, idx) => {
+      const on = idx === active;
+      btn.classList.toggle('active', on);
+      btn.setAttribute('aria-selected', String(on));
+    });
+
+    const body = cardEl.querySelector('.do-card-body');
+    if (body){
+      body.classList.add('fade');
+      setTimeout(() => { renderCard(active); }, 180);
+    } else {
+      renderCard(active);
+    }
+  }
+
+  function startAutoplay(){
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => setActive((active + 1) % items.length), AUTOPLAY_MS);
+  }
+
+  items.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setActive(parseInt(btn.dataset.index, 10));
+      startAutoplay(); // manual pick resets the countdown
+    });
+  });
+
+  // pause the autoplay while the user is hovering the list, resume on leave
+  listEl.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
+  listEl.addEventListener('mouseleave', () => startAutoplay());
+
+  renderCard(0);
+  startAutoplay();
+})();
+</script>
+
+<script>
+/* =========================================================
+   FAQ ACCORDION — one item open at a time, plus/x icon
+   rotation, and the same cursor-glow treatment as other cards.
+   ========================================================= */
+(function(){
+  const list = document.getElementById('faqList');
+  if (!list) return;
+  const items = Array.from(list.querySelectorAll('.faq-item'));
+
+  items.forEach(item => {
+    const q = item.querySelector('.faq-q');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      items.forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    item.addEventListener('mousemove', (e) => {
+      const r = item.getBoundingClientRect();
+      item.style.setProperty('--mx', ((e.clientX - r.left) / r.width) * 100 + '%');
+      item.style.setProperty('--my', ((e.clientY - r.top) / r.height) * 100 + '%');
+    });
+  });
+})();
+</script>
+</body>
+</html>

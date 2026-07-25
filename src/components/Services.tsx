@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 
 const services = [
   {
     index: '01',
     name: 'AI Automation',
+    slug: 'ai-automation',
     alt: 'AI Automation workflow diagram',
     desc: "Custom workflows and AI agents that take repetitive work off your team's plate — quietly, in the background, every day.",
     tags: ['Workflow design', 'AI agents', 'Integrations'],
@@ -14,6 +16,7 @@ const services = [
   {
     index: '02',
     name: 'Website Development',
+    slug: 'website-development',
     alt: 'Website Development preview',
     desc: 'Fast, accessible, conversion-minded sites — built on modern stacks and designed to be edited without calling us every time.',
     tags: ['Marketing sites', 'E-commerce', 'CMS builds'],
@@ -24,6 +27,7 @@ const services = [
   {
     index: '03',
     name: 'App Development',
+    slug: 'app-development',
     alt: 'App Development interface mockup',
     desc: 'iOS, Android and cross-platform products — from first prototype through to something real users open every day.',
     tags: ['Mobile apps', 'Cross-platform', 'MVP builds'],
@@ -34,6 +38,7 @@ const services = [
   {
     index: '04',
     name: 'Digital Marketing',
+    slug: 'digital-marketing',
     alt: 'Digital Marketing strategy visual',
     desc: 'Paid, organic and lifecycle campaigns tied to real revenue targets — not vanity metrics on a monthly slide deck.',
     tags: ['Paid media', 'SEO', 'Email & CRM'],
@@ -44,6 +49,7 @@ const services = [
   {
     index: '05',
     name: 'Branding',
+    slug: 'branding',
     alt: 'Branding identity system design',
     desc: 'Identity systems — name, mark, voice and guidelines — built to hold up across a product, not just a pitch deck.',
     tags: ['Identity', 'Brand systems', 'Design language'],
@@ -65,7 +71,7 @@ export default function Services() {
         </div>
         <div className="svc-grid">
           {services.map((svc) => (
-            <div className="svc-card reveal" key={svc.index}>
+            <Link to={`/services/${svc.slug}`} className="svc-card reveal" key={svc.index}>
                 <img className="svc-card-bg" src={theme === 'light' ? svc.bgLight : svc.bg} alt={svc.alt} loading="lazy" />
                 <span className="svc-index">{svc.index}</span>
               <div className="svc-icon">
@@ -80,7 +86,7 @@ export default function Services() {
                   <span key={tag}>{tag}</span>
                 ))}
               </div>
-            </div>
+            </Link>
           ))}
           <div className="svc-card reveal" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'linear-gradient(160deg,var(--surface-2),var(--bg-2))' }}>
             <h3 style={{ marginBottom: 12 }}>Not sure what you need?</h3>

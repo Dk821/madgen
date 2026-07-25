@@ -1,0 +1,624 @@
+
+You are a Senior Software Architect, React.js Developer, UI/UX Designer, and Frontend Engineer.
+
+Your task is to analyze my entire React project and the uploaded HTML file before writing any code.
+
+Do not immediately generate code.
+
+First understand the existing architecture and then integrate the uploaded HTML into the project using reusable components.
+
+---
+
+# PRIMARY OBJECTIVE
+
+Convert the uploaded service-layout.html page into a fully reusable React-based Service Details system.
+
+Instead of creating separate pages for every service, build one dynamic page powered entirely by JSON.
+
+The final implementation must look like it was originally designed with the existing project.
+
+---
+
+# IMPORTANT RULES
+
+DO NOT
+
+* Create a new React project
+* Redesign the UI
+* Change the existing design system
+* Break existing pages
+* Duplicate components
+* Hardcode service content
+* Introduce unnecessary libraries
+* Change folder naming conventions without reason
+
+ALWAYS
+
+* Reuse existing components
+* Reuse existing theme
+* Reuse animations
+* Reuse typography
+* Reuse button styles
+* Reuse cards
+* Reuse icons
+* Reuse spacing
+* Reuse responsive utilities
+* Keep code modular
+* Follow the project's coding standards
+
+---
+
+# STEP 1
+
+Analyze the existing React project.
+
+Understand:
+
+* Folder structure
+* Component architecture
+* Routing
+* Theme system
+* Design tokens
+* CSS/Tailwind setup
+* Existing reusable components
+* Navbar
+* Footer
+* Animation libraries
+* Icons
+* Image management
+* SEO implementation
+* State management
+* Utility functions
+* Hooks
+* Existing JSON files
+* Dark/Light theme support
+* Responsive strategy
+
+Do not modify unrelated pages.
+
+---
+
+# STEP 2
+
+Analyze the uploaded HTML file completely.
+
+Identify every reusable section.
+
+The HTML includes sections similar to:
+
+* Hero
+* Technology Stack
+* Services Overview
+* Interactive Service Cards
+* Process Timeline
+* Statistics
+* Why Choose Us
+* FAQ
+* CTA
+* Footer
+* Glass UI Effects
+* Animations
+* Background Effects
+
+Convert every section into reusable React components.
+
+Do NOT copy the HTML directly.
+
+Instead convert it into clean React architecture.
+
+---
+
+# STEP 3
+
+Create ONE reusable Service Details page.
+
+Route
+
+```
+/services/:slug
+```
+
+Examples
+
+```
+/services/web-development
+
+/services/mobile-app-development
+
+/services/ui-ux-design
+
+/services/digital-marketing
+
+/services/seo
+
+/services/ecommerce-development
+```
+
+Never create individual pages for every service.
+
+---
+
+# STEP 4
+
+Create a reusable JSON architecture.
+
+Example
+
+```
+src/
+
+data/
+
+services.json
+```
+
+Every service object should contain
+
+```
+id
+
+slug
+
+title
+
+category
+
+icon
+
+hero
+
+overview
+
+description
+
+shortDescription
+
+bannerImage
+
+heroImage
+
+features[]
+
+benefits[]
+
+services[]
+
+technologies[]
+
+developmentProcess[]
+
+statistics[]
+
+industries[]
+
+portfolio[]
+
+testimonials[]
+
+pricing[]
+
+faq[]
+
+gallery[]
+
+cta
+
+relatedServices[]
+
+seo
+
+metaTitle
+
+metaDescription
+
+metaKeywords
+
+schemaMarkup
+```
+
+Everything must come from JSON.
+
+Components should never contain hardcoded content.
+
+Adding a new service should only require adding another JSON object.
+
+No component should be modified when adding future services.
+
+---
+
+# STEP 5
+
+Convert the HTML into reusable React components.
+
+Suggested components
+
+```
+ServiceHero
+
+Breadcrumb
+
+OverviewSection
+
+FeatureGrid
+
+TechnologySection
+
+DevelopmentProcess
+
+StatisticsSection
+
+IndustrySection
+
+PortfolioSection
+
+TestimonialsSection
+
+PricingSection
+
+FAQSection
+
+CTASection
+
+RelatedServices
+
+ServiceSEO
+```
+
+Each component must receive props.
+
+No duplicated JSX.
+
+---
+
+# STEP 6
+
+Update the existing Services page.
+
+Current
+
+```
+Service Card
+```
+
+After update
+
+```
+Click Card
+
+↓
+
+Navigate
+
+↓
+
+/services/service-slug
+```
+
+Use React Router.
+
+Example
+
+```
+<Link to={`/services/${service.slug}`}>
+```
+
+---
+
+# STEP 7
+
+Routing
+
+Update routing without affecting existing pages.
+
+Example
+
+```
+/
+
+about
+
+services
+
+/services/:slug
+
+contact
+
+blog
+
+portfolio
+```
+
+If slug does not exist
+
+Return
+
+```
+404
+
+Service Not Found
+```
+
+---
+
+# STEP 8
+
+SEO
+
+Each service page should dynamically generate
+
+```
+Page Title
+
+Meta Description
+
+Keywords
+
+Canonical URL
+
+Open Graph
+
+Twitter Card
+
+JSON-LD Service Schema
+```
+
+Everything comes from JSON.
+
+---
+
+# STEP 9
+
+Related Services
+
+At the bottom of every page
+
+Display
+
+```
+Related Services
+```
+
+Exclude the current service.
+
+Read data from JSON.
+
+---
+
+# STEP 10
+
+Breadcrumb
+
+Example
+
+```
+Home
+
+>
+
+Services
+
+>
+
+Web Development
+```
+
+Automatically generated.
+
+---
+
+# STEP 11
+
+Animations
+
+Reuse existing animation system.
+
+If the project already uses
+
+* Framer Motion
+* AOS
+* GSAP
+* Motion
+* CSS animations
+
+Continue using that.
+
+Do not install another animation library.
+
+---
+
+# STEP 12
+
+Images
+
+Support
+
+```
+Lazy Loading
+
+Responsive Images
+
+WebP
+
+Fallback Images
+```
+
+Image paths come from JSON.
+
+---
+
+# STEP 13
+
+Performance
+
+Optimize for
+
+* Code Splitting
+* Lazy Loading
+* Memoization where appropriate
+* Dynamic imports
+* Minimal re-renders
+* Reusable hooks
+* Clean component composition
+
+---
+
+# STEP 14
+
+Accessibility
+
+Follow WCAG best practices
+
+* Semantic HTML
+* Keyboard navigation
+* ARIA labels
+* Proper heading hierarchy
+* Alt text
+* Focus states
+* Color contrast
+
+---
+
+# STEP 15
+
+Folder Structure
+
+Refactor only if necessary.
+
+Preferred structure
+
+```
+src/
+
+components/
+
+Service/
+
+Hero/
+
+Overview/
+
+Features/
+
+Technology/
+
+Process/
+
+Statistics/
+
+FAQ/
+
+CTA/
+
+RelatedServices/
+
+pages/
+
+Service/
+
+ServiceDetails.jsx
+
+Services.jsx
+
+data/
+
+services.json
+
+hooks/
+
+useService.js
+
+utils/
+
+getServiceBySlug.js
+
+routes/
+```
+
+---
+
+# STEP 16
+
+Code Quality
+
+Write production-ready code.
+
+Follow
+
+* SOLID
+* DRY
+* Clean Architecture
+* Reusable Components
+* Type Safety (if TypeScript)
+* Proper Naming
+* Error Handling
+* Loading States
+* Empty States
+
+---
+
+# STEP 17
+
+Maintain Existing UI
+
+The final pages must feel like they were originally built as part of the existing website.
+
+Do not change
+
+* Colors
+* Typography
+* Shadows
+* Glassmorphism
+* Buttons
+* Cards
+* Navigation
+* Footer
+* Animations
+* Branding
+* Layout consistency
+
+Only integrate the uploaded HTML design into the existing design language.
+
+---
+
+# STEP 18
+
+Expected Deliverables
+
+After implementation, provide:
+
+1. Updated folder structure.
+
+2. List of files created.
+
+3. List of files modified.
+
+4. List of reusable components.
+
+5. Updated routing.
+
+6. JSON structure.
+
+7. Dynamic Service Details implementation.
+
+8. SEO implementation.
+
+9. Performance optimizations.
+
+10. Accessibility improvements.
+
+11. Summary of all changes.
+
+---
+
+# FINAL EXECUTION INSTRUCTIONS
+
+Before writing code:
+
+1. Analyze the complete React project.
+2. Analyze the uploaded HTML file.
+3. Identify reusable sections.
+4. Map those sections to the existing React architecture.
+5. Create a detailed implementation plan.
+6. Only then begin coding.
+
+Implement incrementally while preserving existing functionality. The final solution should be scalable, maintainable, production-ready, and allow new service pages to be added by editing only the JSON data, without requiring changes to React components or routing.

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 import Sidebar from './Sidebar'
 
@@ -6,6 +7,8 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme()
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   useEffect(() => {
     const onScroll = () => {
@@ -21,15 +24,27 @@ export default function Header() {
     <header ref={headerRef} id="siteHeader">
       <div className="navbar">
         <div className="nav-shell">
-          <a href="#hero" className="logo">
+          <Link to="/" className="logo">
             <img src="/madgen-logo.svg" alt="Madgen home" className="logo-img" />
-          </a>
+          </Link>
           <nav className="links">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#why">Why Us</a>
-            <a href="#process">Process</a>
-            <a href="#work">Work</a>
+            {isHome ? (
+              <>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#why">Why Us</a>
+                <a href="#process">Process</a>
+                <a href="#work">Work</a>
+              </>
+            ) : (
+              <>
+                <Link to="/#about">About</Link>
+                <Link to="/#services">Services</Link>
+                <Link to="/#why">Why Us</Link>
+                <Link to="/#process">Process</Link>
+                <Link to="/#work">Work</Link>
+              </>
+            )}
           </nav>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <button
@@ -47,7 +62,11 @@ export default function Header() {
                 <path d="M21 12.6A9 9 0 1 1 11.4 3a7 7 0 0 0 9.6 9.6z" />
               </svg>
             </button>
-            <a href="#cta" className="btn btn-primary">Start a Project</a>
+            {isHome ? (
+              <a href="#cta" className="btn btn-primary">Start a Project</a>
+            ) : (
+              <Link to="/#cta" className="btn btn-primary">Start a Project</Link>
+            )}
             <button
               className={`hamburger ${sidebarOpen ? 'open' : ''}`}
               type="button"
