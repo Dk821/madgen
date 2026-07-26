@@ -15,49 +15,62 @@ import Footer from '../../components/Footer'
 
 gsap.registerPlugin(ScrollTrigger)
 
-function ServiceScrollReveals() {
+/**
+ * Re-initialises scroll-triggered reveal animations.
+ * Depends on `slug` so that navigating between service pages
+ * kills stale triggers and creates fresh ones.
+ */
+function ServiceScrollReveals({ slug }: { slug: string | undefined }) {
   useEffect(() => {
+    // Kill all previous triggers before creating new ones
+    ScrollTrigger.getAll().forEach(t => t.kill())
 
-    document.querySelectorAll('.reveal').forEach((el) => {
-      gsap.fromTo(el, { opacity: 0, y: 28 }, {
-        opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 88%' },
+    // Small delay to let the new page DOM render
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach((el) => {
+        gsap.fromTo(el, { opacity: 0, y: 28 }, {
+          opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 88%' },
+        })
       })
-    })
 
-    gsap.utils.toArray('.sv-hero-visual').forEach((el: unknown) => {
-      const target = el as gsap.TweenTarget
-      gsap.fromTo(target, { opacity: 0, scale: 0.92 }, {
-        opacity: 1, scale: 1, duration: 1.1, ease: 'power3.out',
-        scrollTrigger: { trigger: el as HTMLElement, start: 'top 85%' },
+      gsap.utils.toArray('.sv-hero-visual').forEach((el: unknown) => {
+        const target = el as gsap.TweenTarget
+        gsap.fromTo(target, { opacity: 0, scale: 0.92 }, {
+          opacity: 1, scale: 1, duration: 1.1, ease: 'power3.out',
+          scrollTrigger: { trigger: el as HTMLElement, start: 'top 85%' },
+        })
       })
-    })
 
-    gsap.utils.toArray('.svc-grid').forEach((grid: unknown) => {
-      const el = grid as HTMLElement
-      gsap.fromTo(el.children, { opacity: 0, y: 34 }, {
-        opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.08,
-        scrollTrigger: { trigger: el, start: 'top 85%' },
+      gsap.utils.toArray('.svc-grid').forEach((grid: unknown) => {
+        const el = grid as HTMLElement
+        gsap.fromTo(el.children, { opacity: 0, y: 34 }, {
+          opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.08,
+          scrollTrigger: { trigger: el, start: 'top 85%' },
+        })
       })
-    })
 
-    gsap.utils.toArray('.do-layout').forEach((grid: unknown) => {
-      const el = grid as HTMLElement
-      gsap.fromTo(el.children, { opacity: 0, y: 34 }, {
-        opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.08,
-        scrollTrigger: { trigger: el, start: 'top 85%' },
+      gsap.utils.toArray('.do-layout').forEach((grid: unknown) => {
+        const el = grid as HTMLElement
+        gsap.fromTo(el.children, { opacity: 0, y: 34 }, {
+          opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.08,
+          scrollTrigger: { trigger: el, start: 'top 85%' },
+        })
       })
-    })
 
-    gsap.fromTo('.stats-bar', { opacity: 0, y: 24 }, {
-      opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
-      scrollTrigger: { trigger: '.stats-bar', start: 'top 85%' },
-    })
+      gsap.fromTo('.stats-bar', { opacity: 0, y: 24 }, {
+        opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+        scrollTrigger: { trigger: '.stats-bar', start: 'top 85%' },
+      })
+
+      ScrollTrigger.refresh()
+    }, 50)
 
     return () => {
+      clearTimeout(timer)
       ScrollTrigger.getAll().forEach(t => t.kill())
     }
-  }, [])
+  }, [slug])
 
   return null
 }
@@ -72,7 +85,7 @@ export default function ServiceDetails() {
   if (!service) {
     return (
       <div className="sv-not-found">
-        <ServiceScrollReveals />
+        <ServiceScrollReveals slug={slug} />
         <div className="wrap" style={{ paddingTop: 200, paddingBottom: 120, textAlign: 'center' }}>
           <h1 style={{ fontSize: 72, marginBottom: 16 }}>404</h1>
           <h2 style={{ marginBottom: 24 }}>Service Not Found</h2>
@@ -89,9 +102,10 @@ export default function ServiceDetails() {
   return (
     <div className="sv-page">
       <ServiceSEO data={service.seo} />
-      <ServiceScrollReveals />
+      <ServiceScrollReveals slug={slug} />
       <ServiceHero data={service.hero} />
       <div className="wrap"><div className="divider"></div></div>
+
       <TechnologySection technologies={service.technologies} />
       <div className="wrap"><div className="divider"></div></div>
       <FeatureGrid
@@ -107,3 +121,4 @@ export default function ServiceDetails() {
     </div>
   )
 }
+

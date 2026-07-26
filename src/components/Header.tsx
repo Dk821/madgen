@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 import Sidebar from './Sidebar'
+import HashLink from './HashLink'
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme()
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
-  const location = useLocation()
-  const isHome = location.pathname === '/'
 
   useEffect(() => {
     const onScroll = () => {
@@ -24,27 +22,15 @@ export default function Header() {
     <header ref={headerRef} id="siteHeader">
       <div className="navbar">
         <div className="nav-shell">
-          <Link to="/" className="logo">
+          <HashLink to="#hero" className="logo">
             <img src="/madgen-logo.svg" alt="Madgen home" className="logo-img" />
-          </Link>
+          </HashLink>
           <nav className="links">
-            {isHome ? (
-              <>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#why">Why Us</a>
-                <a href="#process">Process</a>
-                <a href="#work">Work</a>
-              </>
-            ) : (
-              <>
-                <Link to="/#about">About</Link>
-                <Link to="/#services">Services</Link>
-                <Link to="/#why">Why Us</Link>
-                <Link to="/#process">Process</Link>
-                <Link to="/#work">Work</Link>
-              </>
-            )}
+            <HashLink to="#about">About</HashLink>
+            <HashLink to="#services">Services</HashLink>
+            <HashLink to="#why">Why Us</HashLink>
+            <HashLink to="#process">Process</HashLink>
+            <HashLink to="#work">Work</HashLink>
           </nav>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <button
@@ -62,11 +48,7 @@ export default function Header() {
                 <path d="M21 12.6A9 9 0 1 1 11.4 3a7 7 0 0 0 9.6 9.6z" />
               </svg>
             </button>
-            {isHome ? (
-              <a href="#cta" className="btn btn-primary">Start a Project</a>
-            ) : (
-              <Link to="/#cta" className="btn btn-primary">Start a Project</Link>
-            )}
+            <HashLink to="#cta" className="btn btn-primary">Start a Project</HashLink>
             <button
               className={`hamburger ${sidebarOpen ? 'open' : ''}`}
               type="button"

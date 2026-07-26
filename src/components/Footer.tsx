@@ -1,13 +1,15 @@
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import HashLink from './HashLink'
 
-const contactPhone = import.meta.env.VITE_CONTACT_PHONE || ''
-const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || ''
-const contactInstagram = import.meta.env.VITE_CONTACT_INSTAGRAM || ''
+const contactPhone = import.meta.env.VITE_CONTACT_PHONE || '+91 79047 60181'
+const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || 'madgenmedia@gmail.com'
+const contactInstagram = import.meta.env.VITE_CONTACT_INSTAGRAM || 'https://www.instagram.com/madgen.media/'
 const contactLinkedIn = import.meta.env.VITE_CONTACT_LINKEDIN || ''
-const contactWhatsapp = import.meta.env.VITE_CONTACT_WHATSAPP || ''
+const contactWhatsapp = import.meta.env.VITE_CONTACT_WHATSAPP || 'https://wa.me/917904760181'
 const waMessage = encodeURIComponent(
-  "Hi Madgen! I came across your work and wanted to know more about your services."
+  "Hi Madgen! I came across your work and wanted to know more about your services.."
 )
 
 export default function Footer() {
@@ -16,7 +18,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-top">
           <div className="footer-brand">
-            <a href="#hero" className="logo"><img src="/madgen-logo.svg" alt="Madgen home" className="logo-img" /></a>
+            <HashLink to="#hero" className="logo"><img src="/madgen-logo.svg" alt="Madgen home" className="logo-img" /></HashLink>
             <p>A digital foundry for automation product and brand — built as one connected system..</p>
             <div className="footer-follow">
               <h4>Follow Us</h4>
@@ -37,18 +39,18 @@ export default function Footer() {
           <div className="footer-cols">
             <div className="footer-col">
               <h4>Services</h4>
-              <a href="#services">AI Automation</a>
-              <a href="#services">Website Development</a>
-              <a href="#services">App Development</a>
-              <a href="#services">Digital Marketing</a>
-              <a href="#services">Branding</a>
+              <Link to="/services/ai-automation" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>AI Automation</Link>
+              <Link to="/services/website-development" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Website Development</Link>
+              <Link to="/services/app-development" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>App Development</Link>
+              <Link to="/services/digital-marketing" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Digital Marketing</Link>
+              <Link to="/services/branding" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Branding</Link>
             </div>
             <div className="footer-col">
               <h4>Studio</h4>
-              <a href="#about">About</a>
-              <a href="#process">Process</a>
-              <a href="#work">Work</a>
-              <a href="#cta">Contact</a>
+              <HashLink to="#about">About</HashLink>
+              <HashLink to="#process">Process</HashLink>
+              <HashLink to="#work">Work</HashLink>
+              <HashLink to="#cta">Contact</HashLink>
             </div>
             <div className="footer-col">
               <h4>Connect</h4>
@@ -87,3 +89,4 @@ export default function Footer() {
     </footer>
   )
 }
+

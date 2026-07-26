@@ -1,15 +1,16 @@
 import { useEffect, useRef } from 'react'
 import { useTheme } from '../context/ThemeContext'
+import HashLink from './HashLink'
 
 interface SidebarProps {
   open: boolean
   onClose: () => void
 }
 
-const contactPhone = import.meta.env.VITE_CONTACT_PHONE || ''
-const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || ''
-const contactInstagram = import.meta.env.VITE_CONTACT_INSTAGRAM || ''
+const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || 'madgenmedia@gmail.com'
+const contactInstagram = import.meta.env.VITE_CONTACT_INSTAGRAM || 'https://www.instagram.com/madgen.media/'
 const contactLinkedIn = import.meta.env.VITE_CONTACT_LINKEDIN || ''
+const contactWhatsapp = import.meta.env.VITE_CONTACT_WHATSAPP || 'https://wa.me/917904760181'
 const waMessage = encodeURIComponent(
   "Hi Madgen! I came across your work and wanted to know more about your services."
 )
@@ -38,16 +39,16 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
       aria-label="Navigation menu"
     >
       <nav className="mobile-nav-links">
-        <a href="#about" onClick={handleLinkClick}>About</a>
-        <a href="#services" onClick={handleLinkClick}>Services</a>
-        <a href="#why" onClick={handleLinkClick}>Why Us</a>
-        <a href="#process" onClick={handleLinkClick}>Process</a>
-        <a href="#work" onClick={handleLinkClick}>Work</a>
+        <HashLink to="#about" onClick={handleLinkClick}>About</HashLink>
+        <HashLink to="#services" onClick={handleLinkClick}>Services</HashLink>
+        <HashLink to="#why" onClick={handleLinkClick}>Why Us</HashLink>
+        <HashLink to="#process" onClick={handleLinkClick}>Process</HashLink>
+        <HashLink to="#work" onClick={handleLinkClick}>Work</HashLink>
       </nav>
 
       <div className="mobile-nav-contact">
-        {contactPhone ? (
-          <a href={`https://wa.me/${contactPhone.replace(/[^+\d]/g, '')}?text=${waMessage}`} target="_blank" rel="noopener noreferrer" className="mobile-nav-contact-link" aria-label="WhatsApp">
+        {contactWhatsapp ? (
+          <a href={contactWhatsapp.includes('?') ? `${contactWhatsapp}&text=${waMessage}` : `${contactWhatsapp}?text=${waMessage}`} target="_blank" rel="noopener noreferrer" className="mobile-nav-contact-link" aria-label="WhatsApp">
             <i className="fa-brands fa-whatsapp"></i>
           </a>
         ) : null}
@@ -86,10 +87,11 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         </button>
 
 
-        <a href="#cta" className="btn btn-primary mobile-nav-cta" onClick={handleLinkClick}>
+        <HashLink to="#cta" className="btn btn-primary mobile-nav-cta" onClick={handleLinkClick}>
           Start a Project
-        </a>
+        </HashLink>
       </div>
     </div>
   )
 }
+

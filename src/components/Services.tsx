@@ -7,7 +7,7 @@ const services = [
     name: 'AI Automation',
     slug: 'ai-automation',
     alt: 'AI Automation workflow diagram',
-    desc: "Custom workflows and AI agents that take repetitive work off your team's plate — quietly, in the background, every day.",
+    desc: "Custom workflows and AI agents that take repetitive work off your team's plate quietly, in the background, every day.",
     tags: ['Workflow design', 'AI agents', 'Integrations'],
     icon: [<path key="a" d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />, <circle key="b" cx="12" cy="12" r="3.2" />],
     bg: '/service-image/dark/AI-Automation.webp',
@@ -18,7 +18,7 @@ const services = [
     name: 'Website Development',
     slug: 'website-development',
     alt: 'Website Development preview',
-    desc: 'Fast, accessible, conversion-minded sites — built on modern stacks and designed to be edited without calling us every time.',
+    desc: 'Fast, accessible, conversion-minded sites built on modern stacks and designed to be edited without calling us every time.',
     tags: ['Marketing sites', 'E-commerce', 'CMS builds'],
     icon: [<rect key="a" x="3" y="4" width="18" height="14" rx="2" />, <path key="b" d="M3 9h18M8 21h8" />],
     bg: '/service-image/dark/web-development.webp',
@@ -29,7 +29,7 @@ const services = [
     name: 'App Development',
     slug: 'app-development',
     alt: 'App Development interface mockup',
-    desc: 'iOS, Android and cross-platform products — from first prototype through to something real users open every day.',
+    desc: 'iOS, Android and cross-platform products from first prototype through to something real users open every day.',
     tags: ['Mobile apps', 'Cross-platform', 'MVP builds'],
     icon: [<rect key="a" x="6" y="2" width="12" height="20" rx="2.5" />, <path key="b" d="M11 18h2" />],
     bg: '/service-image/dark/App-Development.webp',
@@ -40,7 +40,7 @@ const services = [
     name: 'Digital Marketing',
     slug: 'digital-marketing',
     alt: 'Digital Marketing strategy visual',
-    desc: 'Paid, organic and lifecycle campaigns tied to real revenue targets — not vanity metrics on a monthly slide deck.',
+    desc: 'Paid, organic and lifecycle campaigns tied to real revenue targets not vanity metrics on a monthly slide deck.',
     tags: ['Paid media', 'SEO', 'Email & CRM'],
     icon: [<path key="a" d="M3 11l18-7-7 18-3-8-8-3z" />],
     bg: '/service-image/dark/Digital-Marketing.webp',
@@ -51,7 +51,7 @@ const services = [
     name: 'Branding',
     slug: 'branding',
     alt: 'Branding identity system design',
-    desc: 'Identity systems — name, mark, voice and guidelines — built to hold up across a product, not just a pitch deck.',
+    desc: 'Identity systems name, mark, voice and guidelines built to hold up across a product, not just a pitch deck.',
     tags: ['Identity', 'Brand systems', 'Design language'],
     icon: [<path key="a" d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z" />],
     bg: '/service-image/dark/Branding.webp',
@@ -67,13 +67,23 @@ export default function Services() {
         <div className="sec-head">
           <div className="eyebrow reveal">// OUR SERVICES</div>
           <h2 className="reveal">Five disciplines. One team.</h2>
-          <p className="reveal">Everything a growing business needs to look sharp, run smart, and get found — built to work together, not stitched together after the fact.</p>
+          <p className="reveal">Everything a growing business needs to look sharp, run smart, and get found built to work together, not stitched together after the fact.</p>
         </div>
         <div className="svc-grid">
           {services.map((svc) => (
             <Link to={`/services/${svc.slug}`} className="svc-card reveal" key={svc.index}>
-                <img className="svc-card-bg" src={theme === 'light' ? svc.bgLight : svc.bg} alt={svc.alt} loading="lazy" />
+              <img className="svc-card-bg" src={theme === 'light' ? svc.bgLight : svc.bg} alt={svc.alt} loading="lazy" />
+              <div className="svc-card-top">
                 <span className="svc-index">{svc.index}</span>
+                <div className="svc-view-more">
+                  <span className="svc-view-more-text">View More</span>
+                  <div className="svc-view-more-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <path d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <div className="svc-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                   {svc.icon.map((node: React.ReactNode) => node)}
@@ -90,7 +100,7 @@ export default function Services() {
           ))}
           <div className="svc-card reveal" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'linear-gradient(160deg,var(--surface-2),var(--bg-2))' }}>
             <h3 style={{ marginBottom: 12 }}>Not sure what you need?</h3>
-            <p style={{ marginBottom: 20 }}>Tell us the problem, not the service — we&apos;ll map the right mix in a 20-minute call.</p>
+            <p style={{ marginBottom: 20 }}>Tell us the problem, not the service we&apos;ll map the right mix in a 20 minute call.</p>
             <a href="#cta" className="btn btn-ghost" style={{ width: 'fit-content' }}>Talk it through →</a>
           </div>
         </div>

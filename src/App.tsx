@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -16,6 +16,32 @@ import Footer from './components/Footer'
 import ServiceDetails from './pages/Service/ServiceDetails'
 
 gsap.registerPlugin(ScrollTrigger)
+
+/**
+ * Handles scrolling to a hash target after React Router navigation.
+ * When the URL contains a hash (e.g. /#about), this waits for the DOM
+ * to update and then scrolls to the matching element.
+ */
+function ScrollToHash() {
+  const { hash, pathname } = useLocation()
+
+  useEffect(() => {
+    if (!hash) return
+
+    // Small delay to let the page render after navigation
+    const timer = setTimeout(() => {
+      const id = hash.replace('#', '')
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 150)
+
+    return () => clearTimeout(timer)
+  }, [hash, pathname])
+
+  return null
+}
 
 function SmoothScroll() {
   useEffect(() => {
@@ -157,19 +183,6 @@ function HomePage() {
   )
 }
 
-export default function App() {
-  return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/services/:slug" element={<ServiceDetailsWrapper />} />
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
-  )
-}
-
 function ServiceDetailsWrapper() {
   return (
     <>
@@ -181,3 +194,19 @@ function ServiceDetailsWrapper() {
     </>
   )
 }
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <BrowserRouter>
+        <ScrollToHash />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services/:slug" element={<ServiceDetailsWrapper />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
+  )
+}
+
