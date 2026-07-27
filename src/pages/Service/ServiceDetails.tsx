@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useService } from '../../hooks/useService'
@@ -12,6 +11,7 @@ import FAQSection from '../../components/Service/FAQSection'
 import CTA from '../../components/CTA'
 import RelatedServices from '../../components/Service/RelatedServices'
 import Footer from '../../components/Footer'
+import NotFound from '../NotFound'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -83,19 +83,7 @@ export default function ServiceDetails() {
   }, [slug])
 
   if (!service) {
-    return (
-      <div className="sv-not-found">
-        <ServiceScrollReveals slug={slug} />
-        <div className="wrap" style={{ paddingTop: 200, paddingBottom: 120, textAlign: 'center' }}>
-          <h1 style={{ fontSize: 48, marginBottom: 16 }}>404 — Service Not Found</h1>
-          <p style={{ color: 'var(--ink-dim)', marginBottom: 32, fontSize: 16 }}>
-            The service you're looking for doesn't exist or has been moved.
-          </p>
-          <Link to="/" className="btn btn-primary">Back to Home</Link>
-        </div>
-        <Footer />
-      </div>
-    )
+    return <NotFound />
   }
 
   return (
