@@ -1,4 +1,59 @@
+# ==============================================================================
+# Robots.txt for Madgen Studio (https://madgen.us)
+# A digital foundry for automation, product and brand.
+# ==============================================================================
+
+# ── Default: allow everything ─────────────────────────────────────────────────
 User-agent: *
 Allow: /
+Disallow: /assets/
 
+# ── Search Engine Crawlers ────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# ── AI & LLM Crawlers ────────────────────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# ── Sitemap & LLMs.txt ───────────────────────────────────────────────────────
 Sitemap: https://madgen.us/sitemap.xml

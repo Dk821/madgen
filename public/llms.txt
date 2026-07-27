@@ -1,0 +1,83 @@
+# MADGEN
+
+> Madgen (https://madgen.us) — Systems for what's next. A digital foundry for automation, product and brand — built as one connected system.
+
+## About
+
+Madgen started in 2025 with a stubborn belief: small businesses deserve the same calibre of engineering and design that funded startups get. Today we're a full-stack digital partner — one team of 14 specialists handling the automation, the software, the site and the story, so nothing falls into the gaps between agencies. Remote-first, global. Average engagement: 3–9 months. We keep client rosters deliberately small — every project gets senior hands, not a rotating cast of juniors.
+
+## Services
+
+- [AI Automation](https://madgen.us/services/ai-automation): Custom workflows and AI agents that take repetitive work off your team's plate — workflow design, AI agents, and integrations.
+- [Website Development](https://madgen.us/services/website-development): Fast, accessible, conversion-minded marketing sites, e-commerce, and CMS builds on modern stacks — designed to be edited without calling us every time.
+- [App Development](https://madgen.us/services/app-development): iOS, Android and cross-platform products from first prototype through to something real users open every day — mobile apps, cross-platform, MVP builds.
+- [Digital Marketing](https://madgen.us/services/digital-marketing): Paid, organic and lifecycle campaigns tied to real revenue targets — paid media, SEO, email & CRM.
+- [Branding](https://madgen.us/services/branding): Identity systems — name, mark, voice and guidelines — built to hold up across a product, not just a pitch deck.
+
+## Why Choose Madgen
+
+- **Senior hands only**: You work directly with the people doing the work — no account-manager relay race.
+- **One connected system**: Your site, app, automations and marketing are built to share data, not fight each other.
+- **Fixed-scope pricing**: You know the number before we start. No surprise invoices, no scope creep tax.
+- **We stay after launch**: Retainers built for iteration, not just handoff-and-disappear support tickets.
+
+## Process
+
+1. **Discover** (Week 1): We map the problem, the users and the constraints before opening a single design tool.
+2. **Design** (Week 2–3): Wireframes to high-fidelity screens, reviewed together in short async loops — not one big reveal.
+3. **Build** (Week 3–8): Engineering in weekly increments you can see and test, with staging links from day one.
+4. **Launch** (Week 9): QA, performance passes and a staged rollout — launch day should be uneventful by design.
+5. **Grow** (Ongoing): Post-launch retainer covering iteration, campaigns and the automations that keep compounding.
+
+## Selected Work
+
+- **SENTHUR VFX** — Client portfolio, full-service agency site: https://senthur-ytta.vercel.app/
+- **Only Moringa** — Wellness application with clean interface and scalable architecture: https://wellness-sand.vercel.app/
+- **Suvai Catering** — Instagram carousel for menu offerings and brand presence
+- **PMT Logo** — Logo design
+- **Branproz Logo** — Logo design
+
+## Key Stats
+
+- 20+ projects shipped
+- 6+ automations live
+- 4.9/5 client rating
+
+## Contact
+
+- **Email**: madgenmedia@gmail.com
+- **Phone**: +91 79047 60181
+- **WhatsApp**: https://wa.me/917904760181
+- **Instagram**: https://www.instagram.com/madgen.media/
+- **Contact form**: https://madgen.us/#cta — A senior member of the team replies within one business day. Fixed-scope quote back within 48 hours.
+
+## Site Navigation
+
+- [Homepage](https://madgen.us/)
+- [About](https://madgen.us/#about)
+- [Services](https://madgen.us/#services)
+- [Why Us](https://madgen.us/#why)
+- [Process](https://madgen.us/#process)
+- [Work](https://madgen.us/#work)
+- [Contact](https://madgen.us/#cta)
+
+### Service Pages
+
+- [AI Automation](https://madgen.us/services/ai-automation)
+- [Website Development](https://madgen.us/services/website-development)
+- [App Development](https://madgen.us/services/app-development)
+- [Digital Marketing](https://madgen.us/services/digital-marketing)
+- [Branding](https://madgen.us/services/branding)
+
+## Technologies
+
+- **Frontend**: React, Next.js, TypeScript, Tailwind CSS, GSAP
+- **Backend & Cloud**: Node.js, MongoDB, PostgreSQL, AWS, GraphQL, Docker
+- **Mobile**: Swift, SwiftUI, Kotlin, Jetpack Compose, React Native, Flutter, Firebase
+- **Marketing & Analytics**: Google Analytics, Google Ads, Meta Ads, HubSpot, Salesforce, SEMrush, Ahrefs, Hotjar, Looker Studio
+- **Design**: Figma, Adobe Creative Suite, Illustrator, Photoshop, After Effects
+
+## Machine-Readable Resources
+
+- [Sitemap](https://madgen.us/sitemap.xml)
+- [robots.txt](https://madgen.us/robots.txt)
