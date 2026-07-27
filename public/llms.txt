@@ -1,6 +1,6 @@
 # MADGEN
 
-> Madgen (https://madgen.us) — Systems for what's next. A digital foundry for automation, product and brand — built as one connected system.
+> Madgen (https://madgen-three.vercel.app) — Systems for what's next. A digital foundry for automation, product and brand — built as one connected system.
 
 ## About
 
@@ -8,11 +8,11 @@ Madgen started in 2025 with a stubborn belief: small businesses deserve the same
 
 ## Services
 
-- [AI Automation](https://madgen.us/services/ai-automation): Custom workflows and AI agents that take repetitive work off your team's plate — workflow design, AI agents, and integrations.
-- [Website Development](https://madgen.us/services/website-development): Fast, accessible, conversion-minded marketing sites, e-commerce, and CMS builds on modern stacks — designed to be edited without calling us every time.
-- [App Development](https://madgen.us/services/app-development): iOS, Android and cross-platform products from first prototype through to something real users open every day — mobile apps, cross-platform, MVP builds.
-- [Digital Marketing](https://madgen.us/services/digital-marketing): Paid, organic and lifecycle campaigns tied to real revenue targets — paid media, SEO, email & CRM.
-- [Branding](https://madgen.us/services/branding): Identity systems — name, mark, voice and guidelines — built to hold up across a product, not just a pitch deck.
+- [AI Automation](https://madgen-three.vercel.app/services/ai-automation): Custom workflows and AI agents that take repetitive work off your team's plate — workflow design, AI agents, and integrations.
+- [Website Development](https://madgen-three.vercel.app/services/website-development): Fast, accessible, conversion-minded marketing sites, e-commerce, and CMS builds on modern stacks — designed to be edited without calling us every time.
+- [App Development](https://madgen-three.vercel.app/services/app-development): iOS, Android and cross-platform products from first prototype through to something real users open every day — mobile apps, cross-platform, MVP builds.
+- [Digital Marketing](https://madgen-three.vercel.app/services/digital-marketing): Paid, organic and lifecycle campaigns tied to real revenue targets — paid media, SEO, email & CRM.
+- [Branding](https://madgen-three.vercel.app/services/branding): Identity systems — name, mark, voice and guidelines — built to hold up across a product, not just a pitch deck.
 
 ## Why Choose Madgen
 
@@ -49,25 +49,25 @@ Madgen started in 2025 with a stubborn belief: small businesses deserve the same
 - **Phone**: +91 79047 60181
 - **WhatsApp**: https://wa.me/917904760181
 - **Instagram**: https://www.instagram.com/madgen.media/
-- **Contact form**: https://madgen.us/#cta — A senior member of the team replies within one business day. Fixed-scope quote back within 48 hours.
+- **Contact form**: https://madgen-three.vercel.app/#cta — A senior member of the team replies within one business day. Fixed-scope quote back within 48 hours.
 
 ## Site Navigation
 
-- [Homepage](https://madgen.us/)
-- [About](https://madgen.us/#about)
-- [Services](https://madgen.us/#services)
-- [Why Us](https://madgen.us/#why)
-- [Process](https://madgen.us/#process)
-- [Work](https://madgen.us/#work)
-- [Contact](https://madgen.us/#cta)
+- [Homepage](https://madgen-three.vercel.app/)
+- [About](https://madgen-three.vercel.app/#about)
+- [Services](https://madgen-three.vercel.app/#services)
+- [Why Us](https://madgen-three.vercel.app/#why)
+- [Process](https://madgen-three.vercel.app/#process)
+- [Work](https://madgen-three.vercel.app/#work)
+- [Contact](https://madgen-three.vercel.app/#cta)
 
 ### Service Pages
 
-- [AI Automation](https://madgen.us/services/ai-automation)
-- [Website Development](https://madgen.us/services/website-development)
-- [App Development](https://madgen.us/services/app-development)
-- [Digital Marketing](https://madgen.us/services/digital-marketing)
-- [Branding](https://madgen.us/services/branding)
+- [AI Automation](https://madgen-three.vercel.app/services/ai-automation)
+- [Website Development](https://madgen-three.vercel.app/services/website-development)
+- [App Development](https://madgen-three.vercel.app/services/app-development)
+- [Digital Marketing](https://madgen-three.vercel.app/services/digital-marketing)
+- [Branding](https://madgen-three.vercel.app/services/branding)
 
 ## Technologies
 
@@ -79,5 +79,5 @@ Madgen started in 2025 with a stubborn belief: small businesses deserve the same
 
 ## Machine-Readable Resources
 
-- [Sitemap](https://madgen.us/sitemap.xml)
-- [robots.txt](https://madgen.us/robots.txt)
+- [Sitemap](https://madgen-three.vercel.app/sitemap.xml)
+- [robots.txt](https://madgen-three.vercel.app/robots.txt)

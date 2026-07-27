@@ -87,8 +87,7 @@ export default function ServiceDetails() {
       <div className="sv-not-found">
         <ServiceScrollReveals slug={slug} />
         <div className="wrap" style={{ paddingTop: 200, paddingBottom: 120, textAlign: 'center' }}>
-          <h1 style={{ fontSize: 72, marginBottom: 16 }}>404</h1>
-          <h2 style={{ marginBottom: 24 }}>Service Not Found</h2>
+          <h1 style={{ fontSize: 48, marginBottom: 16 }}>404 — Service Not Found</h1>
           <p style={{ color: 'var(--ink-dim)', marginBottom: 32, fontSize: 16 }}>
             The service you're looking for doesn't exist or has been moved.
           </p>

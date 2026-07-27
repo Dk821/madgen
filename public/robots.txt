@@ -1,5 +1,5 @@
 # ==============================================================================
-# Robots.txt for Madgen Studio (https://madgen.us)
+# Robots.txt for Madgen Studio (https://madgen-three.vercel.app)
 # A digital foundry for automation, product and brand.
 # ==============================================================================
 
@@ -56,4 +56,4 @@ User-agent: cohere-ai
 Allow: /
 
 # ── Sitemap & LLMs.txt ───────────────────────────────────────────────────────
-Sitemap: https://madgen.us/sitemap.xml
+Sitemap: https://madgen-three.vercel.app/sitemap.xml
