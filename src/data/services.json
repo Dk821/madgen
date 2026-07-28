@@ -4,228 +4,111 @@
     "slug": "ai-automation",
     "title": "AI Automation",
     "category": "Automation",
-    "shortDescription": "Custom workflows and AI agents that take repetitive work off your team's plate.",
-    "description": "We build intelligent automation systems that handle repetitive tasks, streamline operations, and free your team to focus on what matters. From AI-powered chatbots to complex workflow automation, we design systems that work quietly in the background, every day.",
+    "shortDescription": "Custom AI agents and workflow automation that take repetitive work off your team's plate.",
+    "description": "We build intelligent automation systems that handle repetitive tasks, streamline operations, and free your team to focus on what matters. From AI agents and chatbots to backend workflow orchestration, we design systems that work quietly in the background, every day.",
     "hero": {
       "heroImage": "/service-image/dark/AI-Automation.webp",
       "heroImageLight": "/service-image/light/AI-Automation.webp",
       "eyebrow": "",
       "heading": "AI Automation That<br>Transforms <span class=\"shine\">Workflows</span>",
-      "lead": "We build intelligent automation systems AI agents, custom workflows, and integrations that eliminate busywork and accelerate your operations.",
+      "lead": "We build intelligent automation systems — AI agents, custom workflows, and integrations — that eliminate busywork and accelerate your operations.",
       "chips": [
-        {
-          "icon": "spark",
-          "label": "Smart Automation",
-          "sub": "AI-powered workflows"
-        },
-        {
-          "icon": "shield",
-          "label": "Secure & Reliable",
-          "sub": "Enterprise-grade safety"
-        },
-        {
-          "icon": "zap",
-          "label": "Fast Integration",
-          "sub": "Works with your stack"
-        }
+        { "icon": "spark", "label": "Smart Automation", "sub": "AI-powered workflows" },
+        { "icon": "shield", "label": "Secure & Reliable", "sub": "Enterprise-grade safety" },
+        { "icon": "zap", "label": "Fast Integration", "sub": "Works with your stack" }
       ],
       "actions": [
-        {
-          "label": "Talk to our experts",
-          "variant": "primary",
-          "href": "#cta"
-        },
-        {
-          "label": "View our work",
-          "variant": "ghost",
-          "href": "/#work"
-        }
+        { "label": "Talk to our experts", "variant": "primary", "href": "#cta" },
+        { "label": "View our work", "variant": "ghost", "href": "/#work" }
       ]
     },
     "overview": {
       "heading": "End-to-end automation, shaped around your workflow.",
-      "description": "From discovery to deployment, we build automation systems that are reliable, scalable, and made to grow with you."
+      "description": "From process audit to deployment, we build AI automation systems that are reliable, scalable, and made to grow with you."
     },
     "features": [
       {
-        "title": "Custom Website Development",
-        "tag": "Sites / Landing",
-        "description": "Beautiful, fast, modern websites engineered from the ground up around your brand no bloated templates, no shortcuts.",
-        "chips": [
-          "Business websites",
-          "Landing pages",
-          "Corporate sites",
-          "Custom solutions"
-        ]
+        "title": "AI Agent Development",
+        "tag": "Autonomous Agents",
+        "description": "Custom AI agents that handle multi-step tasks — research, data entry, customer support, scheduling — with human oversight built in.",
+        "chips": ["Task agents", "Multi-step reasoning", "Human-in-the-loop", "Custom LLM prompts"]
       },
       {
-        "title": "Web Application Development",
-        "tag": "SaaS / Dashboards",
-        "description": "Powerful web apps that streamline operations and drive growth, built for scale from day one.",
-        "chips": [
-          "SaaS applications",
-          "Admin dashboards",
-          "CRM & ERP systems",
-          "API development"
-        ]
+        "title": "Workflow & Process Automation",
+        "tag": "Ops / Backend",
+        "description": "We map your manual processes and rebuild them as automated pipelines, no more copy-paste between tools.",
+        "chips": ["Process mapping", "No-code + custom", "Error handling", "Audit trails"]
       },
       {
-        "title": "E-commerce Development",
-        "tag": "Shopify / Carts",
-        "description": "Scalable online stores with seamless shopping experiences, engineered to convert.",
-        "chips": [
-          "Shopify",
-          "Custom carts",
-          "Payment integration"
-        ]
+        "title": "Chatbots & Conversational AI",
+        "tag": "Support / Sales",
+        "description": "AI-powered chat that resolves support tickets, qualifies leads, and hands off to a human when it matters.",
+        "chips": ["Support chatbots", "Lead qualification", "Multi-channel", "Escalation logic"]
       },
       {
-        "title": "UI/UX Design",
-        "tag": "Wireframes / Systems",
-        "description": "User-centered designs that look stunning and convert visitors into customers.",
-        "chips": [
-          "Wireframing",
-          "Prototyping",
-          "Design systems"
-        ]
+        "title": "System & Tool Integrations",
+        "tag": "CRM / ERP / APIs",
+        "description": "We connect your CRM, ERP, spreadsheets, and internal tools so data moves automatically, not manually.",
+        "chips": ["CRM integration", "ERP integration", "API development", "Webhooks & sync"]
       },
       {
-        "title": "CMS Development",
-        "tag": "WordPress / Headless",
-        "description": "Easy-to-manage websites with powerful content management systems.",
-        "chips": [
-          "WordPress",
-          "Webflow",
-          "Headless CMS"
-        ]
+        "title": "Document & Data Processing",
+        "tag": "Extraction / OCR",
+        "description": "Automated extraction, classification, and routing for invoices, forms, emails, and unstructured documents.",
+        "chips": ["OCR & extraction", "Data classification", "Auto-routing", "Validation rules"]
       },
       {
-        "title": "Maintenance & Support",
-        "tag": "Security / Uptime",
-        "description": "Keep your website secure, updated, and performing at its best, around the clock.",
-        "chips": [
-          "Bug fixes & updates",
-          "Security monitoring",
-          "24/7 support"
-        ]
+        "title": "Monitoring & Support",
+        "tag": "Reliability / Uptime",
+        "description": "Once live, we monitor every workflow for failures and drift, so automations keep working quietly in the background.",
+        "chips": ["Uptime monitoring", "Error alerts", "Version updates", "24/7 support"]
       }
     ],
     "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
+      "OpenAI",
+      "Anthropic Claude",
+      "LangChain",
+      "n8n",
+      "Zapier",
+      "Make",
+      "Python",
       "Node.js",
-      "MongoDB",
-      "PostgreSQL",
-      "AWS",
-      "GraphQL",
-      "Docker",
+      "Pinecone",
+      "AWS Lambda",
       "& More"
     ],
     "developmentProcess": [
-      {
-        "step": "01",
-        "title": "Discover",
-        "icon": "idea",
-        "description": "We learn your business, goals, and audience to define the right approach."
-      },
-      {
-        "step": "02",
-        "title": "Design",
-        "icon": "bolt",
-        "description": "Clean, modern, engaging interfaces built around the user."
-      },
-      {
-        "step": "03",
-        "title": "Develop",
-        "icon": "code",
-        "description": "Fast, secure, and scalable code, shipped with precision."
-      },
-      {
-        "step": "04",
-        "title": "Deploy & Support",
-        "icon": "rocket",
-        "description": "We launch your solution and stay on for long-term success."
-      }
+      { "step": "01", "title": "Audit", "icon": "idea", "description": "We map your current manual processes to find the highest-impact automation opportunities." },
+      { "step": "02", "title": "Design", "icon": "bolt", "description": "We architect the workflow or agent logic, including edge cases and human checkpoints." },
+      { "step": "03", "title": "Build", "icon": "code", "description": "We build and test the automation against real data before it touches production." },
+      { "step": "04", "title": "Deploy & Monitor", "icon": "rocket", "description": "We launch, monitor for drift and failures, and keep it running long-term." }
     ],
     "statistics": [
-      {
-        "value": 500,
-        "suffix": "+",
-        "label": "Projects Delivered",
-        "sub": "Across 30+ industries"
-      },
-      {
-        "value": 98,
-        "suffix": "%",
-        "label": "On-Time Delivery",
-        "sub": "Every single time"
-      },
-      {
-        "value": 4.9,
-        "suffix": "/5",
-        "decimal": 1,
-        "label": "Client Satisfaction",
-        "sub": "Rated by our clients"
-      },
-      {
-        "value": 100,
-        "suffix": "%",
-        "label": "Secure & Reliable",
-        "sub": "Security-first approach"
-      }
+      { "value": 500, "suffix": "+", "label": "Workflows Automated", "sub": "Across 30+ industries" },
+      { "value": 40, "suffix": "%", "label": "Avg. Hours Saved Monthly", "sub": "Per automated process" },
+      { "value": 98, "suffix": "%", "label": "On-Time Delivery", "sub": "Every single time" },
+      { "value": 100, "suffix": "%", "label": "Secure & Reliable", "sub": "Security-first approach" }
     ],
     "faq": [
-      {
-        "question": "How do you decide what to build first?",
-        "answer": "We map every idea against impact, feasibility, and effort, then prototype the riskiest assumption within the first few days so early progress proves the direction, not just fills a timeline.",
-        "meta": "Discovery"
-      },
-      {
-        "question": "What does the workflow look like once we start?",
-        "answer": "A dedicated design + engineering pair works from a shared board you have full visibility into. Decisions get logged inline, so you're never chasing an update in a separate thread.",
-        "meta": "Collaboration"
-      },
-      {
-        "question": "Can you work with our existing stack or design system?",
-        "answer": "Yes we map your existing tokens, components, and build steps into our process from day one. Where a gap shows up, we patch it with tests so speed never comes at the cost of consistency.",
-        "meta": "Systems"
-      },
-      {
-        "question": "How is quality checked before launch?",
-        "answer": "Accessibility passes, visual regression checks, and performance budgets run on every merge. Nothing ships until it holds up on real devices, not just in a preview link.",
-        "meta": "Quality"
-      },
-      {
-        "question": "How long does a typical project take?",
-        "answer": "A focused marketing site usually lands in 3–5 weeks; a full web app is closer to 8–14 depending on scope. You'll get a clear milestone plan before any work begins, not a vague estimate.",
-        "meta": "Timeline"
-      },
-      {
-        "question": "What happens after launch?",
-        "answer": "Every project rolls into a maintenance window by default monitoring, security patches, and small fixes are covered, with clear options if you want an ongoing retainer beyond that.",
-        "meta": "Support"
-      }
+      { "question": "How do we know which processes to automate first?", "answer": "We audit your current workflows and rank them by time spent, error rate, and complexity — then start with the highest-impact, lowest-risk process first.", "meta": "Discovery" },
+      { "question": "Do you build custom AI agents or use off-the-shelf tools?", "answer": "Both, depending on the job. Off-the-shelf tools like Zapier or Make are faster for simple syncing; custom agents make sense once a task needs judgment, memory, or multi-step reasoning.", "meta": "Approach" },
+      { "question": "Will automation work with our existing CRM and tools?", "answer": "Yes — we integrate with the systems you already use rather than asking you to switch platforms. Most CRMs, ERPs, and internal tools expose an API or webhook we can connect to.", "meta": "Integrations" },
+      { "question": "How do you handle data security in automated workflows?", "answer": "Every workflow runs with scoped permissions, encrypted credentials, and logging, so you can see exactly what ran, when, and on what data.", "meta": "Security" },
+      { "question": "What if the automation breaks or the underlying tool changes?", "answer": "We monitor every live workflow and get alerted on failures before you notice them, with a maintenance window included after launch.", "meta": "Support" },
+      { "question": "How long until we see ROI?", "answer": "Simple workflow automations often pay for themselves within 4–8 weeks. Custom agent projects take longer to build but typically save the most time long-term.", "meta": "Timeline" }
     ],
     "cta": {
       "eyebrow": "Let's Work Together",
-      "heading": "Ready to build something amazing together?",
-      "description": "Let's turn your ideas into powerful digital experiences that make an impact.",
-      "primaryAction": {
-        "label": "Start a Project",
-        "href": "#cta"
-      },
-      "secondaryAction": {
-        "label": "Schedule a Call",
-        "href": "#cta"
-      }
+      "heading": "Ready to automate what's slowing you down?",
+      "description": "Let's find the workflows costing you the most time and build systems that run without you.",
+      "primaryAction": { "label": "Start a Project", "href": "#cta" },
+      "secondaryAction": { "label": "Schedule a Call", "href": "#cta" }
     },
     "seo": {
-      "metaTitle": "AI Automation Services Madgen",
-      "metaDescription": "Custom AI automation workflows and agents that take repetitive work off your team's plate. Trusted by growing businesses.",
-      "metaKeywords": "AI automation, workflow automation, AI agents, business automation",
-      "canonicalURL": "/services/ai-automation"
+      "metaTitle": "AI Automation Agency | Custom Workflows & AI Agents — Madgen",
+      "metaDescription": "Madgen builds custom AI agents and workflow automation that cut manual work and integrate with your existing tools. See how automation can save your team hours every week.",
+      "metaKeywords": "AI automation agency, workflow automation, AI agents, business process automation, chatbot development, n8n automation, custom AI agents",
+      "canonicalURL": "https://madgen-three.vercel.app/services/ai-automation"
     }
   },
   {
@@ -234,41 +117,21 @@
     "title": "Website Development",
     "category": "Development",
     "shortDescription": "Fast, accessible, conversion-minded sites built on modern stacks.",
-    "description": "We build fast, secure, and scalable websites and web applications that deliver exceptional user experiences engineered in glass-clean code and shipped with intent.",
+    "description": "We build fast, secure, and scalable websites and web applications that deliver exceptional user experiences — engineered in glass-clean code and shipped with intent.",
     "hero": {
       "heroImage": "/service-image/dark/web-development.webp",
       "heroImageLight": "/service-image/light/web-development.webp",
       "eyebrow": "",
       "heading": "Web Development That<br>Builds <span class=\"shine\">Brands</span>",
-      "lead": "We build fast, secure, and scalable websites and web applications that deliver exceptional user experiences engineered in glass-clean code and shipped with intent.",
+      "lead": "We build fast, secure, and scalable websites and web applications that deliver exceptional user experiences — engineered in glass-clean code and shipped with intent.",
       "chips": [
-        {
-          "icon": "zap",
-          "label": "High Performance",
-          "sub": "Optimized for speed"
-        },
-        {
-          "icon": "shield",
-          "label": "Secure & Reliable",
-          "sub": "Clean, safe code"
-        },
-        {
-          "icon": "grid",
-          "label": "Responsive Design",
-          "sub": "Pixel-perfect, all devices"
-        }
+        { "icon": "zap", "label": "High Performance", "sub": "Optimized for speed" },
+        { "icon": "shield", "label": "Secure & Reliable", "sub": "Clean, safe code" },
+        { "icon": "grid", "label": "Responsive Design", "sub": "Pixel-perfect, all devices" }
       ],
       "actions": [
-        {
-          "label": "Talk to our experts",
-          "variant": "primary",
-          "href": "#cta"
-        },
-        {
-          "label": "View our work",
-          "variant": "ghost",
-          "href": "/#work"
-        }
+        { "label": "Talk to our experts", "variant": "primary", "href": "#cta" },
+        { "label": "View our work", "variant": "ghost", "href": "/#work" }
       ]
     },
     "overview": {
@@ -276,185 +139,46 @@
       "description": "From concept to deployment, we build digital products that are fast, secure, and made to grow with you."
     },
     "features": [
-      {
-        "title": "Custom Website Development",
-        "tag": "Sites / Landing",
-        "description": "Beautiful, fast, modern websites engineered from the ground up around your brand — no bloated templates, no shortcuts.",
-        "chips": [
-          "Business websites",
-          "Landing pages",
-          "Corporate sites",
-          "Custom solutions"
-        ]
-      },
-      {
-        "title": "Web Application Development",
-        "tag": "SaaS / Dashboards",
-        "description": "Powerful web apps that streamline operations and drive growth, built for scale from day one.",
-        "chips": [
-          "SaaS applications",
-          "Admin dashboards",
-          "CRM & ERP systems",
-          "API development"
-        ]
-      },
-      {
-        "title": "E-commerce Development",
-        "tag": "Shopify / Carts",
-        "description": "Scalable online stores with seamless shopping experiences, engineered to convert.",
-        "chips": [
-          "Shopify",
-          "Custom carts",
-          "Payment integration"
-        ]
-      },
-      {
-        "title": "UI/UX Design",
-        "tag": "Wireframes / Systems",
-        "description": "User-centered designs that look stunning and convert visitors into customers.",
-        "chips": [
-          "Wireframing",
-          "Prototyping",
-          "Design systems"
-        ]
-      },
-      {
-        "title": "CMS Development",
-        "tag": "WordPress / Headless",
-        "description": "Easy-to-manage websites with powerful content management systems.",
-        "chips": [
-          "WordPress",
-          "Webflow",
-          "Headless CMS"
-        ]
-      },
-      {
-        "title": "Maintenance & Support",
-        "tag": "Security / Uptime",
-        "description": "Keep your website secure, updated, and performing at its best, around the clock.",
-        "chips": [
-          "Bug fixes & updates",
-          "Security monitoring",
-          "24/7 support"
-        ]
-      }
+      { "title": "Custom Website Development", "tag": "Sites / Landing", "description": "Beautiful, fast, modern websites engineered from the ground up around your brand — no bloated templates, no shortcuts.", "chips": ["Business websites", "Landing pages", "Corporate sites", "Custom solutions"] },
+      { "title": "Web Application Development", "tag": "SaaS / Dashboards", "description": "Powerful web apps that streamline operations and drive growth, built for scale from day one.", "chips": ["SaaS applications", "Admin dashboards", "CRM & ERP systems", "API development"] },
+      { "title": "E-commerce Development", "tag": "Shopify / Carts", "description": "Scalable online stores with seamless shopping experiences, engineered to convert.", "chips": ["Shopify", "Custom carts", "Payment integration"] },
+      { "title": "UI/UX Design", "tag": "Wireframes / Systems", "description": "User-centered designs that look stunning and convert visitors into customers.", "chips": ["Wireframing", "Prototyping", "Design systems"] },
+      { "title": "CMS Development", "tag": "WordPress / Headless", "description": "Easy-to-manage websites with powerful content management systems.", "chips": ["WordPress", "Webflow", "Headless CMS"] },
+      { "title": "Maintenance & Support", "tag": "Security / Uptime", "description": "Keep your website secure, updated, and performing at its best, around the clock.", "chips": ["Bug fixes & updates", "Security monitoring", "24/7 support"] }
     ],
-    "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "MongoDB",
-      "PostgreSQL",
-      "AWS",
-      "GraphQL",
-      "Docker",
-      "& More"
-    ],
+    "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB", "PostgreSQL", "AWS", "GraphQL", "Docker", "& More"],
     "developmentProcess": [
-      {
-        "step": "01",
-        "title": "Discover",
-        "icon": "idea",
-        "description": "We learn your business, goals, and audience to define the right approach."
-      },
-      {
-        "step": "02",
-        "title": "Design",
-        "icon": "bolt",
-        "description": "Clean, modern, engaging interfaces built around the user."
-      },
-      {
-        "step": "03",
-        "title": "Develop",
-        "icon": "code",
-        "description": "Fast, secure, and scalable code, shipped with precision."
-      },
-      {
-        "step": "04",
-        "title": "Deploy & Support",
-        "icon": "rocket",
-        "description": "We launch your solution and stay on for long-term success."
-      }
+      { "step": "01", "title": "Discover", "icon": "idea", "description": "We learn your business, goals, and audience to define the right approach." },
+      { "step": "02", "title": "Design", "icon": "bolt", "description": "Clean, modern, engaging interfaces built around the user." },
+      { "step": "03", "title": "Develop", "icon": "code", "description": "Fast, secure, and scalable code, shipped with precision." },
+      { "step": "04", "title": "Deploy & Support", "icon": "rocket", "description": "We launch your solution and stay on for long-term success." }
     ],
     "statistics": [
-      {
-        "value": 500,
-        "suffix": "+",
-        "label": "Websites Delivered",
-        "sub": "Across 30+ industries"
-      },
-      {
-        "value": 98,
-        "suffix": "%",
-        "label": "On-Time Delivery",
-        "sub": "Every single time"
-      },
-      {
-        "value": 4.9,
-        "suffix": "/5",
-        "decimal": 1,
-        "label": "Client Satisfaction",
-        "sub": "Rated by our clients"
-      },
-      {
-        "value": 100,
-        "suffix": "%",
-        "label": "Secure & Reliable",
-        "sub": "Security-first approach"
-      }
+      { "value": 500, "suffix": "+", "label": "Websites Delivered", "sub": "Across 30+ industries" },
+      { "value": 98, "suffix": "%", "label": "On-Time Delivery", "sub": "Every single time" },
+      { "value": 4.9, "suffix": "/5", "decimal": 1, "label": "Client Satisfaction", "sub": "Rated by our clients" },
+      { "value": 100, "suffix": "%", "label": "Secure & Reliable", "sub": "Security-first approach" }
     ],
     "faq": [
-      {
-        "question": "How do you decide what to build first?",
-        "answer": "We map every idea against impact, feasibility, and effort, then prototype the riskiest assumption within the first few days — so early progress proves the direction, not just fills a timeline.",
-        "meta": "Discovery"
-      },
-      {
-        "question": "What does the workflow look like once we start?",
-        "answer": "A dedicated design + engineering pair works from a shared board you have full visibility into. Decisions get logged inline, so you're never chasing an update in a separate thread.",
-        "meta": "Collaboration"
-      },
-      {
-        "question": "Can you work with our existing stack or design system?",
-        "answer": "Yes — we map your existing tokens, components, and build steps into our process from day one. Where a gap shows up, we patch it with tests so speed never comes at the cost of consistency.",
-        "meta": "Systems"
-      },
-      {
-        "question": "How is quality checked before launch?",
-        "answer": "Accessibility passes, visual regression checks, and performance budgets run on every merge. Nothing ships until it holds up on real devices, not just in a preview link.",
-        "meta": "Quality"
-      },
-      {
-        "question": "How long does a typical project take?",
-        "answer": "A focused marketing site usually lands in 3–5 weeks; a full web app is closer to 8–14 depending on scope. You'll get a clear milestone plan before any work begins, not a vague estimate.",
-        "meta": "Timeline"
-      },
-      {
-        "question": "What happens after launch?",
-        "answer": "Every project rolls into a maintenance window by default — monitoring, security patches, and small fixes are covered, with clear options if you want an ongoing retainer beyond that.",
-        "meta": "Support"
-      }
+      { "question": "How do you decide what to build first?", "answer": "We map every idea against impact, feasibility, and effort, then prototype the riskiest assumption within the first few days — so early progress proves the direction, not just fills a timeline.", "meta": "Discovery" },
+      { "question": "What does the workflow look like once we start?", "answer": "A dedicated design + engineering pair works from a shared board you have full visibility into. Decisions get logged inline, so you're never chasing an update in a separate thread.", "meta": "Collaboration" },
+      { "question": "Can you work with our existing stack or design system?", "answer": "Yes — we map your existing tokens, components, and build steps into our process from day one. Where a gap shows up, we patch it with tests so speed never comes at the cost of consistency.", "meta": "Systems" },
+      { "question": "How is quality checked before launch?", "answer": "Accessibility passes, visual regression checks, and performance budgets run on every merge. Nothing ships until it holds up on real devices, not just in a preview link.", "meta": "Quality" },
+      { "question": "How long does a typical project take?", "answer": "A focused marketing site usually lands in 3–5 weeks; a full web app is closer to 8–14 depending on scope. You'll get a clear milestone plan before any work begins, not a vague estimate.", "meta": "Timeline" },
+      { "question": "What happens after launch?", "answer": "Every project rolls into a maintenance window by default — monitoring, security patches, and small fixes are covered, with clear options if you want an ongoing retainer beyond that.", "meta": "Support" }
     ],
     "cta": {
       "eyebrow": "Let's Work Together",
       "heading": "Ready to build something amazing together?",
       "description": "Let's turn your ideas into powerful digital experiences that make an impact.",
-      "primaryAction": {
-        "label": "Start a Project",
-        "href": "#cta"
-      },
-      "secondaryAction": {
-        "label": "Schedule a Call",
-        "href": "#cta"
-      }
+      "primaryAction": { "label": "Start a Project", "href": "#cta" },
+      "secondaryAction": { "label": "Schedule a Call", "href": "#cta" }
     },
     "seo": {
-      "metaTitle": "Website Development Services — Madgen",
-      "metaDescription": "Fast, accessible, conversion-minded websites built on modern stacks. Web development that builds brands.",
-      "metaKeywords": "web development, website design, React development, frontend development",
-      "canonicalURL": "/services/website-development"
+      "metaTitle": "Website Development Company | Custom Web Design — Madgen",
+      "metaDescription": "Custom website and web app development on Next.js and React — fast, secure, conversion-focused, and built to scale. See how Madgen builds websites that perform.",
+      "metaKeywords": "website development company, custom web design, Next.js development, React development, web application development",
+      "canonicalURL": "https://madgen-three.vercel.app/services/website-development"
     }
   },
   {
@@ -463,7 +187,7 @@
     "title": "App Development",
     "category": "Development",
     "shortDescription": "iOS, Android and cross-platform products from prototype to production.",
-    "description": "We design and build mobile applications that users love iOS, Android, and cross-platform solutions engineered for performance, scalability, and delightful user experiences.",
+    "description": "We design and build mobile applications that users love — iOS, Android, and cross-platform solutions engineered for performance, scalability, and delightful user experiences.",
     "hero": {
       "heroImage": "/service-image/dark/App-Development.webp",
       "heroImageLight": "/service-image/light/App-Development.webp",
@@ -471,33 +195,13 @@
       "heading": "App Development That<br>Delights <span class=\"shine\">Users</span>",
       "lead": "From first prototype through to production, we build mobile apps that real users open every day — fast, reliable, and beautifully crafted.",
       "chips": [
-        {
-          "icon": "smartphone",
-          "label": "Native & Cross-platform",
-          "sub": "iOS, Android, React Native"
-        },
-        {
-          "icon": "shield",
-          "label": "Secure Architecture",
-          "sub": "Enterprise-grade security"
-        },
-        {
-          "icon": "zap",
-          "label": "High Performance",
-          "sub": "Optimized for speed"
-        }
+        { "icon": "smartphone", "label": "Native & Cross-platform", "sub": "iOS, Android, React Native" },
+        { "icon": "shield", "label": "Secure Architecture", "sub": "Enterprise-grade security" },
+        { "icon": "zap", "label": "High Performance", "sub": "Optimized for speed" }
       ],
       "actions": [
-        {
-          "label": "Talk to our experts",
-          "variant": "primary",
-          "href": "#cta"
-        },
-        {
-          "label": "View our work",
-          "variant": "ghost",
-          "href": "/#work"
-        }
+        { "label": "Talk to our experts", "variant": "primary", "href": "#cta" },
+        { "label": "View our work", "variant": "ghost", "href": "/#work" }
       ]
     },
     "overview": {
@@ -505,151 +209,41 @@
       "description": "We turn your app concept into a polished product that users love, with clean architecture and scalable infrastructure."
     },
     "features": [
-      {
-        "title": "Native iOS Development",
-        "tag": "Swift / SwiftUI",
-        "description": "Beautiful, high performance iOS apps built with Swift and SwiftUI, following Apple's latest design guidelines.",
-        "chips": [
-          "Swift",
-          "SwiftUI",
-          "UIKit",
-          "App Store deployment"
-        ]
-      },
-      {
-        "title": "Native Android Development",
-        "tag": "Kotlin / Jetpack",
-        "description": "Feature rich Android applications built with Kotlin and Jetpack Compose for modern, responsive experiences.",
-        "chips": [
-          "Kotlin",
-          "Jetpack Compose",
-          "Material Design",
-          "Play Store"
-        ]
-      },
-      {
-        "title": "Cross-Platform Development",
-        "tag": "React Native / Flutter",
-        "description": "Cost-effective cross-platform apps that share code across iOS and Android without sacrificing quality.",
-        "chips": [
-          "React Native",
-          "Flutter",
-          "Code sharing",
-          "Unified UX"
-        ]
-      },
-      {
-        "title": "MVP Development",
-        "tag": "Rapid Prototyping",
-        "description": "Get to market fast with a minimal viable product that validates your idea and attracts early users.",
-        "chips": [
-          "Rapid prototyping",
-          "Lean development",
-          "Iterative delivery"
-        ]
-      }
+      { "title": "Native iOS Development", "tag": "Swift / SwiftUI", "description": "Beautiful, high performance iOS apps built with Swift and SwiftUI, following Apple's latest design guidelines.", "chips": ["Swift", "SwiftUI", "UIKit", "App Store deployment"] },
+      { "title": "Native Android Development", "tag": "Kotlin / Jetpack", "description": "Feature rich Android applications built with Kotlin and Jetpack Compose for modern, responsive experiences.", "chips": ["Kotlin", "Jetpack Compose", "Material Design", "Play Store"] },
+      { "title": "Cross-Platform Development", "tag": "React Native / Flutter", "description": "Cost-effective cross-platform apps that share code across iOS and Android without sacrificing quality.", "chips": ["React Native", "Flutter", "Code sharing", "Unified UX"] },
+      { "title": "MVP Development", "tag": "Rapid Prototyping", "description": "Get to market fast with a minimal viable product that validates your idea and attracts early users.", "chips": ["Rapid prototyping", "Lean development", "Iterative delivery"] }
     ],
-    "technologies": [
-      "Swift",
-      "Kotlin",
-      "React Native",
-      "Flutter",
-      "TypeScript",
-      "Firebase",
-      "AWS",
-      "GraphQL",
-      "Node.js",
-      "PostgreSQL",
-      "& More"
-    ],
+    "technologies": ["Swift", "Kotlin", "React Native", "Flutter", "TypeScript", "Firebase", "AWS", "GraphQL", "Node.js", "PostgreSQL", "& More"],
     "developmentProcess": [
-      {
-        "step": "01",
-        "title": "Discover",
-        "icon": "idea",
-        "description": "We learn your business, goals, and audience to define the right approach."
-      },
-      {
-        "step": "02",
-        "title": "Design",
-        "icon": "bolt",
-        "description": "Clean, modern, engaging interfaces built around the user."
-      },
-      {
-        "step": "03",
-        "title": "Develop",
-        "icon": "code",
-        "description": "Fast, secure, and scalable code, shipped with precision."
-      },
-      {
-        "step": "04",
-        "title": "Deploy & Support",
-        "icon": "rocket",
-        "description": "We launch your solution and stay on for long-term success."
-      }
+      { "step": "01", "title": "Discover", "icon": "idea", "description": "We learn your business, goals, and audience to define the right approach." },
+      { "step": "02", "title": "Design", "icon": "bolt", "description": "Clean, modern, engaging interfaces built around the user." },
+      { "step": "03", "title": "Develop", "icon": "code", "description": "Fast, secure, and scalable code, shipped with precision." },
+      { "step": "04", "title": "Deploy & Support", "icon": "rocket", "description": "We launch your solution and stay on for long-term success." }
     ],
     "statistics": [
-      {
-        "value": 50,
-        "suffix": "+",
-        "label": "Apps Delivered",
-        "sub": "iOS & Android"
-      },
-      {
-        "value": 4.8,
-        "suffix": "/5",
-        "decimal": 1,
-        "label": "App Store Rating",
-        "sub": "User satisfaction"
-      },
-      {
-        "value": 99.9,
-        "suffix": "%",
-        "label": "Uptime Guarantee",
-        "sub": "Enterprise reliability"
-      },
-      {
-        "value": 60,
-        "suffix": "%",
-        "label": "Faster Time-to-Market",
-        "sub": "Compared to in-house"
-      }
+      { "value": 50, "suffix": "+", "label": "Apps Delivered", "sub": "iOS & Android" },
+      { "value": 4.8, "suffix": "/5", "decimal": 1, "label": "App Store Rating", "sub": "User satisfaction" },
+      { "value": 99.9, "suffix": "%", "label": "Uptime Guarantee", "sub": "Enterprise reliability" },
+      { "value": 60, "suffix": "%", "label": "Faster Time-to-Market", "sub": "Compared to in-house" }
     ],
     "faq": [
-      {
-        "question": "How long does it take to build an MVP?",
-        "answer": "A well-scoped MVP can ship in 6 10 weeks. We start with a focused feature set that validates your core hypothesis, then iterate based on real user feedback.",
-        "meta": "Timeline"
-      },
-      {
-        "question": "Do you support both iOS and Android?",
-        "answer": "Yes — we build native apps for each platform, or cross-platform with React Native or Flutter if that better suits your budget and timeline.",
-        "meta": "Platforms"
-      },
-      {
-        "question": "What happens after launch?",
-        "answer": "Every project rolls into a maintenance window by default monitoring, security patches, and small fixes are covered, with clear options if you want an ongoing retainer beyond that.",
-        "meta": "Support"
-      }
+      { "question": "How long does it take to build an MVP?", "answer": "A well-scoped MVP can ship in 6–10 weeks. We start with a focused feature set that validates your core hypothesis, then iterate based on real user feedback.", "meta": "Timeline" },
+      { "question": "Do you support both iOS and Android?", "answer": "Yes — we build native apps for each platform, or cross-platform with React Native or Flutter if that better suits your budget and timeline.", "meta": "Platforms" },
+      { "question": "What happens after launch?", "answer": "Every project rolls into a maintenance window by default — monitoring, security patches, and small fixes are covered, with clear options if you want an ongoing retainer beyond that.", "meta": "Support" }
     ],
     "cta": {
       "eyebrow": "Let's Work Together",
       "heading": "Ready to build an amazing app?",
       "description": "Let's turn your app idea into a powerful digital experience that users love.",
-      "primaryAction": {
-        "label": "Start a Project",
-        "href": "#cta"
-      },
-      "secondaryAction": {
-        "label": "Schedule a Call",
-        "href": "#cta"
-      }
+      "primaryAction": { "label": "Start a Project", "href": "#cta" },
+      "secondaryAction": { "label": "Schedule a Call", "href": "#cta" }
     },
     "seo": {
-      "metaTitle": "App Development Services — Madgen",
-      "metaDescription": "iOS, Android and cross-platform app development from prototype to production. Build apps users love.",
-      "metaKeywords": "app development, mobile apps, iOS development, Android development, cross-platform",
-      "canonicalURL": "/services/app-development"
+      "metaTitle": "Mobile App Development Company | iOS & Android — Madgen",
+      "metaDescription": "Madgen designs and builds native and cross-platform mobile apps — from MVP to App Store launch. Partner with an app development team built for speed.",
+      "metaKeywords": "mobile app development company, iOS app development, Android app development, React Native development, MVP development",
+      "canonicalURL": "https://madgen-three.vercel.app/services/app-development"
     }
   },
   {
@@ -666,33 +260,13 @@
       "heading": "Digital Marketing That<br>Drives <span class=\"shine\">Revenue</span>",
       "lead": "Paid, organic and lifecycle campaigns tied to real revenue targets — not vanity metrics on a monthly slide deck.",
       "chips": [
-        {
-          "icon": "trending",
-          "label": "Data-Driven",
-          "sub": "Real metrics, real results"
-        },
-        {
-          "icon": "target",
-          "label": "Targeted Campaigns",
-          "sub": "Right audience, right time"
-        },
-        {
-          "icon": "zap",
-          "label": "ROI Focused",
-          "sub": "Every dollar measured"
-        }
+        { "icon": "trending", "label": "Data-Driven", "sub": "Real metrics, real results" },
+        { "icon": "target", "label": "Targeted Campaigns", "sub": "Right audience, right time" },
+        { "icon": "zap", "label": "ROI Focused", "sub": "Every dollar measured" }
       ],
       "actions": [
-        {
-          "label": "Talk to our experts",
-          "variant": "primary",
-          "href": "#cta"
-        },
-        {
-          "label": "View our work",
-          "variant": "ghost",
-          "href": "/#work"
-        }
+        { "label": "Talk to our experts", "variant": "primary", "href": "#cta" },
+        { "label": "View our work", "variant": "ghost", "href": "/#work" }
       ]
     },
     "overview": {
@@ -700,136 +274,39 @@
       "description": "From awareness to conversion, we build campaigns that attract, engage, and convert your ideal customers."
     },
     "features": [
-      {
-        "title": "Search Engine Optimization",
-        "tag": "Organic Growth",
-        "description": "Dominate search rankings with data-driven SEO strategies that drive sustainable organic traffic.",
-        "chips": [
-          "Keyword research",
-          "On-page SEO",
-          "Technical SEO",
-          "Link building"
-        ]
-      },
-      {
-        "title": "Paid Media",
-        "tag": "PPC / Social Ads",
-        "description": "High-converting ad campaigns across Google, Meta, LinkedIn, and more — optimized for ROI.",
-        "chips": [
-          "Google Ads",
-          "Meta Ads",
-          "LinkedIn Ads",
-          "Retargeting"
-        ]
-      },
-      {
-        "title": "Email & CRM Marketing",
-        "tag": "Lifecycle Campaigns",
-        "description": "Automated email sequences and CRM workflows that nurture leads and retain customers.",
-        "chips": [
-          "Email automation",
-          "CRM integration",
-          "Segmentation",
-          "A/B testing"
-        ]
-      }
+      { "title": "Search Engine Optimization", "tag": "Organic Growth", "description": "Dominate search rankings with data-driven SEO strategies that drive sustainable organic traffic.", "chips": ["Keyword research", "On-page SEO", "Technical SEO", "Link building"] },
+      { "title": "Paid Media", "tag": "PPC / Social Ads", "description": "High-converting ad campaigns across Google, Meta, LinkedIn, and more — optimized for ROI.", "chips": ["Google Ads", "Meta Ads", "LinkedIn Ads", "Retargeting"] },
+      { "title": "Email & CRM Marketing", "tag": "Lifecycle Campaigns", "description": "Automated email sequences and CRM workflows that nurture leads and retain customers.", "chips": ["Email automation", "CRM integration", "Segmentation", "A/B testing"] }
     ],
-    "technologies": [
-      "Google Analytics",
-      "Google Ads",
-      "Meta Ads",
-      "HubSpot",
-      "Salesforce",
-      "Mailchimp",
-      "SEMrush",
-      "Ahrefs",
-      "Hotjar",
-      "Looker Studio",
-      "& More"
-    ],
+    "technologies": ["Google Analytics", "Google Ads", "Meta Ads", "HubSpot", "Salesforce", "Mailchimp", "SEMrush", "Ahrefs", "Hotjar", "Looker Studio", "& More"],
     "developmentProcess": [
-      {
-        "step": "01",
-        "title": "Audit",
-        "icon": "idea",
-        "description": "We analyze your current marketing, competitors, and audience to find opportunities."
-      },
-      {
-        "step": "02",
-        "title": "Strategy",
-        "icon": "bolt",
-        "description": "We craft a data-backed marketing plan aligned with your revenue goals."
-      },
-      {
-        "step": "03",
-        "title": "Execute",
-        "icon": "code",
-        "description": "We launch and optimize campaigns across channels with precision."
-      },
-      {
-        "step": "04",
-        "title": "Measure & Optimize",
-        "icon": "rocket",
-        "description": "Continuous testing and refinement to maximize ROI."
-      }
+      { "step": "01", "title": "Audit", "icon": "idea", "description": "We analyze your current marketing, competitors, and audience to find opportunities." },
+      { "step": "02", "title": "Strategy", "icon": "bolt", "description": "We craft a data-backed marketing plan aligned with your revenue goals." },
+      { "step": "03", "title": "Execute", "icon": "code", "description": "We launch and optimize campaigns across channels with precision." },
+      { "step": "04", "title": "Measure & Optimize", "icon": "rocket", "description": "Continuous testing and refinement to maximize ROI." }
     ],
     "statistics": [
-      {
-        "value": 300,
-        "suffix": "+",
-        "label": "Campaigns Run",
-        "sub": "Across industries"
-      },
-      {
-        "value": 4.5,
-        "suffix": "x",
-        "decimal": 1,
-        "label": "Avg. ROAS",
-        "sub": "Return on ad spend"
-      },
-      {
-        "value": 95,
-        "suffix": "%",
-        "label": "Client Retention",
-        "sub": "Year over year"
-      },
-      {
-        "value": 200,
-        "suffix": "%",
-        "label": "Avg. Traffic Growth",
-        "sub": "Within 6 months"
-      }
+      { "value": 300, "suffix": "+", "label": "Campaigns Run", "sub": "Across industries" },
+      { "value": 4.5, "suffix": "x", "decimal": 1, "label": "Avg. ROAS", "sub": "Return on ad spend" },
+      { "value": 95, "suffix": "%", "label": "Client Retention", "sub": "Year over year" },
+      { "value": 200, "suffix": "%", "label": "Avg. Traffic Growth", "sub": "Within 6 months" }
     ],
     "faq": [
-      {
-        "question": "How soon will I see results?",
-        "answer": "Paid campaigns can show results within days. SEO typically takes 3–6 months for meaningful organic traction. We set clear expectations upfront.",
-        "meta": "Timeline"
-      },
-      {
-        "question": "What metrics do you report on?",
-        "answer": "We report on the metrics that matter to your business — revenue, CAC, LTV, conversion rates, and ROAS. No vanity metrics, just actionable data.",
-        "meta": "Reporting"
-      }
+      { "question": "How soon will I see results?", "answer": "Paid campaigns can show results within days. SEO typically takes 3–6 months for meaningful organic traction. We set clear expectations upfront.", "meta": "Timeline" },
+      { "question": "What metrics do you report on?", "answer": "We report on the metrics that matter to your business — revenue, CAC, LTV, conversion rates, and ROAS. No vanity metrics, just actionable data.", "meta": "Reporting" }
     ],
     "cta": {
       "eyebrow": "Let's Work Together",
       "heading": "Ready to grow your revenue?",
       "description": "Let's build a marketing strategy that drives real, measurable results for your business.",
-      "primaryAction": {
-        "label": "Start a Project",
-        "href": "#cta"
-      },
-      "secondaryAction": {
-        "label": "Schedule a Call",
-        "href": "#cta"
-      }
+      "primaryAction": { "label": "Start a Project", "href": "#cta" },
+      "secondaryAction": { "label": "Schedule a Call", "href": "#cta" }
     },
     "seo": {
-      "metaTitle": "Digital Marketing Services — Madgen",
-      "metaDescription": "Data-driven digital marketing campaigns tied to real revenue targets. SEO, paid media, email & CRM.",
-      "metaKeywords": "digital marketing, SEO, paid media, PPC, email marketing, CRM",
-      "canonicalURL": "/services/digital-marketing"
+      "metaTitle": "Digital Marketing Agency | SEO, Paid Ads & CRM — Madgen",
+      "metaDescription": "Data-driven digital marketing built around revenue, not vanity metrics. SEO, paid media, and lifecycle marketing from Madgen. See what a full-funnel strategy looks like.",
+      "metaKeywords": "digital marketing agency, SEO services, paid media agency, PPC management, email marketing automation, CRM marketing",
+      "canonicalURL": "https://madgen-three.vercel.app/services/digital-marketing"
     }
   },
   {
@@ -838,41 +315,21 @@
     "title": "Branding",
     "category": "Design",
     "shortDescription": "Identity systems built to hold up across a product, not just a pitch deck.",
-    "description": "We craft brand identity systems name, mark, voice, and guidelines designed to scale across every touchpoint your customers encounter.",
+    "description": "We craft brand identity systems — name, mark, voice, and guidelines — designed to scale across every touchpoint your customers encounter.",
     "hero": {
       "heroImage": "/service-image/dark/Branding.webp",
       "heroImageLight": "/service-image/light/Branding.webp",
       "eyebrow": "",
       "heading": "Branding That<br>Defines Your <span class=\"shine\">Identity</span>",
-      "lead": "Identity systems name, mark, voice and guidelines built to hold up across a product, not just a pitch deck.",
+      "lead": "Identity systems — name, mark, voice and guidelines — built to hold up across a product, not just a pitch deck.",
       "chips": [
-        {
-          "icon": "spark",
-          "label": "Unique Identity",
-          "sub": "Stand out from the crowd"
-        },
-        {
-          "icon": "grid",
-          "label": "Cohesive Systems",
-          "sub": "Consistent across channels"
-        },
-        {
-          "icon": "shield",
-          "label": "Strategic Foundation",
-          "sub": "Built for scale"
-        }
+        { "icon": "spark", "label": "Unique Identity", "sub": "Stand out from the crowd" },
+        { "icon": "grid", "label": "Cohesive Systems", "sub": "Consistent across channels" },
+        { "icon": "shield", "label": "Strategic Foundation", "sub": "Built for scale" }
       ],
       "actions": [
-        {
-          "label": "Talk to our experts",
-          "variant": "primary",
-          "href": "#cta"
-        },
-        {
-          "label": "View our work",
-          "variant": "ghost",
-          "href": "/#work"
-        }
+        { "label": "Talk to our experts", "variant": "primary", "href": "#cta" },
+        { "label": "View our work", "variant": "ghost", "href": "/#work" }
       ]
     },
     "overview": {
@@ -880,134 +337,39 @@
       "description": "We build identity systems that communicate who you are, what you stand for, and why customers should care."
     },
     "features": [
-      {
-        "title": "Brand Strategy",
-        "tag": "Foundation",
-        "description": "Define your brand's purpose, positioning, and personality to create a strong foundation.",
-        "chips": [
-          "Brand audit",
-          "Positioning",
-          "Messaging",
-          "Brand architecture"
-        ]
-      },
-      {
-        "title": "Visual Identity",
-        "tag": "Design Systems",
-        "description": "Distinctive logos, color systems, typography, and visual languages that make you recognizable.",
-        "chips": [
-          "Logo design",
-          "Color palette",
-          "Typography",
-          "Visual guidelines"
-        ]
-      },
-      {
-        "title": "Brand Guidelines",
-        "tag": "Documentation",
-        "description": "Comprehensive brand books that ensure consistency across every touchpoint.",
-        "chips": [
-          "Brand book",
-          "Tone of voice",
-          "Application guides",
-          "Asset library"
-        ]
-      }
+      { "title": "Brand Strategy", "tag": "Foundation", "description": "Define your brand's purpose, positioning, and personality to create a strong foundation.", "chips": ["Brand audit", "Positioning", "Messaging", "Brand architecture"] },
+      { "title": "Visual Identity", "tag": "Design Systems", "description": "Distinctive logos, color systems, typography, and visual languages that make you recognizable.", "chips": ["Logo design", "Color palette", "Typography", "Visual guidelines"] },
+      { "title": "Brand Guidelines", "tag": "Documentation", "description": "Comprehensive brand books that ensure consistency across every touchpoint.", "chips": ["Brand book", "Tone of voice", "Application guides", "Asset library"] }
     ],
-    "technologies": [
-      "Figma",
-      "Adobe Creative Suite",
-      "Illustrator",
-      "Photoshop",
-      "After Effects",
-      "Principle",
-      "Lottie",
-      "Zeplin",
-      "& More"
-    ],
+    "technologies": ["Figma", "Adobe Creative Suite", "Illustrator", "Photoshop", "After Effects", "Principle", "Lottie", "Zeplin", "& More"],
     "developmentProcess": [
-      {
-        "step": "01",
-        "title": "Discover",
-        "icon": "idea",
-        "description": "We dive deep into your business, market, and vision to uncover your brand's essence."
-      },
-      {
-        "step": "02",
-        "title": "Define",
-        "icon": "bolt",
-        "description": "We articulate your brand strategy, positioning, and personality."
-      },
-      {
-        "step": "03",
-        "title": "Design",
-        "icon": "code",
-        "description": "We craft visual identity systems that bring your brand to life."
-      },
-      {
-        "step": "04",
-        "title": "Deliver",
-        "icon": "rocket",
-        "description": "Comprehensive guidelines and assets for consistent brand execution."
-      }
+      { "step": "01", "title": "Discover", "icon": "idea", "description": "We dive deep into your business, market, and vision to uncover your brand's essence." },
+      { "step": "02", "title": "Define", "icon": "bolt", "description": "We articulate your brand strategy, positioning, and personality." },
+      { "step": "03", "title": "Design", "icon": "code", "description": "We craft visual identity systems that bring your brand to life." },
+      { "step": "04", "title": "Deliver", "icon": "rocket", "description": "Comprehensive guidelines and assets for consistent brand execution." }
     ],
     "statistics": [
-      {
-        "value": 100,
-        "suffix": "+",
-        "label": "Brands Launched",
-        "sub": "Across industries"
-      },
-      {
-        "value": 4.9,
-        "suffix": "/5",
-        "decimal": 1,
-        "label": "Client Satisfaction",
-        "sub": "Design quality rating"
-      },
-      {
-        "value": 85,
-        "suffix": "%",
-        "label": "Brand Recognition",
-        "sub": "Improvement within 6mo"
-      },
-      {
-        "value": 3,
-        "suffix": "x",
-        "label": "Avg. Engagement",
-        "sub": "Increase after rebrand"
-      }
+      { "value": 100, "suffix": "+", "label": "Brands Launched", "sub": "Across industries" },
+      { "value": 4.9, "suffix": "/5", "decimal": 1, "label": "Client Satisfaction", "sub": "Design quality rating" },
+      { "value": 85, "suffix": "%", "label": "Brand Recognition", "sub": "Improvement within 6mo" },
+      { "value": 3, "suffix": "x", "label": "Avg. Engagement", "sub": "Increase after rebrand" }
     ],
     "faq": [
-      {
-        "question": "How long does a branding project take?",
-        "answer": "A full brand identity typically takes 4-8 weeks, depending on scope. We'll give you a clear timeline during the discovery phase.",
-        "meta": "Timeline"
-      },
-      {
-        "question": "What do I get at the end?",
-        "answer": "A complete brand system including logo files, color palette, typography, brand guidelines, and asset libraries — everything you need to apply your brand consistently.",
-        "meta": "Deliverables"
-      }
+      { "question": "How long does a branding project take?", "answer": "A full brand identity typically takes 4–8 weeks, depending on scope. We'll give you a clear timeline during the discovery phase.", "meta": "Timeline" },
+      { "question": "What do I get at the end?", "answer": "A complete brand system including logo files, color palette, typography, brand guidelines, and asset libraries — everything you need to apply your brand consistently.", "meta": "Deliverables" }
     ],
     "cta": {
       "eyebrow": "Let's Work Together",
       "heading": "Ready to define your brand?",
       "description": "Let's build an identity system that sets you apart and resonates with your audience.",
-      "primaryAction": {
-        "label": "Start a Project",
-        "href": "#cta"
-      },
-      "secondaryAction": {
-        "label": "Schedule a Call",
-        "href": "#cta"
-      }
+      "primaryAction": { "label": "Start a Project", "href": "#cta" },
+      "secondaryAction": { "label": "Schedule a Call", "href": "#cta" }
     },
     "seo": {
-      "metaTitle": "Branding Services — Madgen",
-      "metaDescription": "Brand identity systems — name, mark, voice, and guidelines — built to hold up across your entire product ecosystem.",
-      "metaKeywords": "branding, brand identity, logo design, brand strategy, visual identity",
-      "canonicalURL": "/services/branding"
+      "metaTitle": "Brand Identity Agency | Logo, Voice & Guidelines — Madgen",
+      "metaDescription": "Madgen builds brand identity systems — name, mark, voice, and guidelines — designed to scale across your entire product. Explore our branding services.",
+      "metaKeywords": "brand identity agency, branding services, logo design, brand strategy, visual identity design",
+      "canonicalURL": "https://madgen-three.vercel.app/services/branding"
     }
   }
 ]

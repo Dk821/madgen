@@ -129,16 +129,16 @@ export default function CTA() {
       <div className="wrap cta-wrap">
         <div className="cta-copy reveal">
           <div className="eyebrow">// GET IN TOUCH</div>
-          <h2>Tell us what you&apos;re building &mdash; we&apos;ll take it from there.</h2>
+          <h2>Tell us what you&apos;re building we&apos;ll take it from there.</h2>
           <p>
             Share a few details below and a senior member of the team replies
             within one business day. No sales deck, just next steps.
           </p>
 
           <ul className="cta-benefits" aria-label="Contact benefits">
-            <li>Senior hands reply &mdash; never a relay of account managers</li>
+            <li>Senior hands reply  never a relay of account managers</li>
             <li>Fixed-scope quote back within 48 hours</li>
-            <li>No spam, ever &mdash; just your project</li>
+            <li>No spam, ever  just your project</li>
           </ul>
         </div>
 

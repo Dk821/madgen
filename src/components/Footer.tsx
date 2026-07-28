@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <HashLink to="#hero" className="logo"><img src="/madgen-logo.svg" alt="Madgen home" className="logo-img" /></HashLink>
-            <p>A digital foundry for automation product and brand — built as one connected system..</p>
+            <p>A digital foundry for automation product and brand built as one connected system.</p>
             <div className="footer-follow">
               <h4>Follow Us</h4>
               <div className="footer-follow-links">
