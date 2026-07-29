@@ -1,5 +1,5 @@
 # ==============================================================================
-# Robots.txt for Madgen Studio (https://madgen-three.vercel.app)
+# Robots.txt for Madgen Media (https://madgen-three.vercel.app)
 # A digital foundry for automation, product and brand.
 # ==============================================================================
 

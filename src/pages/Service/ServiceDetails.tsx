@@ -88,7 +88,7 @@ export default function ServiceDetails() {
 
   return (
     <div className="sv-page">
-      <ServiceSEO data={service.seo} />
+      <ServiceSEO data={service.seo} slug={service.slug} />
       <ServiceScrollReveals slug={slug} />
       <ServiceHero data={service.hero} />
       <div className="wrap"><div className="divider"></div></div>

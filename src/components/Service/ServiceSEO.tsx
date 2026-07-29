@@ -1,11 +1,14 @@
 import { useEffect } from 'react'
 import { type ServiceSEO as SEOData } from '../../utils/getServiceBySlug'
 
+const BASE = 'https://madgen-three.vercel.app'
+
 interface ServiceSEOProps {
   data: SEOData
+  slug?: string
 }
 
-export default function ServiceSEO({ data }: ServiceSEOProps) {
+export default function ServiceSEO({ data, slug }: ServiceSEOProps) {
   useEffect(() => {
     document.title = data.metaTitle
 
@@ -19,28 +22,31 @@ export default function ServiceSEO({ data }: ServiceSEOProps) {
       el.setAttribute('content', content)
     }
 
+    const setProp = (prop: string, content: string) => {
+      let el = document.querySelector(`meta[property="${prop}"]`) as HTMLElement | null
+      if (!el) {
+        el = document.createElement('meta')
+        el.setAttribute('property', prop)
+        document.head.appendChild(el)
+      }
+      el.setAttribute('content', content)
+    }
+
     setMeta('description', data.metaDescription)
     setMeta('keywords', data.metaKeywords)
 
-    let ogEl = document.querySelector('meta[property="og:title"]') as HTMLElement | null
-    if (!ogEl) { ogEl = document.createElement('meta'); ogEl.setAttribute('property', 'og:title'); document.head.appendChild(ogEl) }
-    ogEl.setAttribute('content', data.metaTitle)
+    setProp('og:title', data.metaTitle)
+    setProp('og:description', data.metaDescription)
+    setProp('og:url', data.canonicalURL)
 
-    ogEl = document.querySelector('meta[property="og:description"]') as HTMLElement | null
-    if (!ogEl) { ogEl = document.createElement('meta'); ogEl.setAttribute('property', 'og:description'); document.head.appendChild(ogEl) }
-    ogEl.setAttribute('content', data.metaDescription)
+    const ogImage = slug
+      ? `${BASE}/og-image/og-image-${slug}.png`
+      : `${BASE}/og-image/og-image.png`
+    setProp('og:image', ogImage)
 
-    ogEl = document.querySelector('meta[property="og:url"]') as HTMLElement | null
-    if (!ogEl) { ogEl = document.createElement('meta'); ogEl.setAttribute('property', 'og:url'); document.head.appendChild(ogEl) }
-    ogEl.setAttribute('content', data.canonicalURL)
-
-    let twEl = document.querySelector('meta[name="twitter:title"]') as HTMLElement | null
-    if (!twEl) { twEl = document.createElement('meta'); twEl.setAttribute('name', 'twitter:title'); document.head.appendChild(twEl) }
-    twEl.setAttribute('content', data.metaTitle)
-
-    twEl = document.querySelector('meta[name="twitter:description"]') as HTMLElement | null
-    if (!twEl) { twEl = document.createElement('meta'); twEl.setAttribute('name', 'twitter:description'); document.head.appendChild(twEl) }
-    twEl.setAttribute('content', data.metaDescription)
+    setMeta('twitter:title', data.metaTitle)
+    setMeta('twitter:description', data.metaDescription)
+    setMeta('twitter:image', ogImage)
 
     let linkEl = document.querySelector('link[rel="canonical"]') as HTMLElement | null
     if (!linkEl) { linkEl = document.createElement('link'); linkEl.setAttribute('rel', 'canonical'); document.head.appendChild(linkEl) }
@@ -49,7 +55,7 @@ export default function ServiceSEO({ data }: ServiceSEOProps) {
     return () => {
       document.title = 'Madgen — Digital Foundry'
     }
-  }, [data])
+  }, [data, slug])
 
   return null
 }

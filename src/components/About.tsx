@@ -5,7 +5,7 @@ export default function About() {
         <div className="about-copy">
           <div className="eyebrow reveal">// ABOUT US</div>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'clamp(1.8rem,3vw,2.6rem)', letterSpacing: '-0.01em', marginBottom: 22 }} className="reveal">
-            A studio that builds like an in house team.
+            A Media that builds like an in house team.
           </h2>
           <p className="reveal"><strong>Madgen started in a spare bedroom with two laptops and a stubborn belief:</strong> small businesses deserve the same calibre of engineering and design that funded startups get.</p>
           <p className="reveal">Today we&apos;re a full stack digital partner one team handling the automation, the software, the site and the story, so nothing falls into the gaps between agencies.</p>

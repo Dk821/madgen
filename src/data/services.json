@@ -278,7 +278,7 @@
       { "title": "Paid Media", "tag": "PPC / Social Ads", "description": "High-converting ad campaigns across Google, Meta, LinkedIn, and more — optimized for ROI.", "chips": ["Google Ads", "Meta Ads", "LinkedIn Ads", "Retargeting"] },
       { "title": "Email & CRM Marketing", "tag": "Lifecycle Campaigns", "description": "Automated email sequences and CRM workflows that nurture leads and retain customers.", "chips": ["Email automation", "CRM integration", "Segmentation", "A/B testing"] }
     ],
-    "technologies": ["Google Analytics", "Google Ads", "Meta Ads", "HubSpot", "Salesforce", "Mailchimp", "SEMrush", "Ahrefs", "Hotjar", "Looker Studio", "& More"],
+    "technologies": ["Google Analytics", "Google Ads", "Meta Ads", "HubSpot", "Salesforce", "Mailchimp", "SEMrush", "Ahrefs", "Hotjar", "Looker Media", "& More"],
     "developmentProcess": [
       { "step": "01", "title": "Audit", "icon": "idea", "description": "We analyze your current marketing, competitors, and audience to find opportunities." },
       { "step": "02", "title": "Strategy", "icon": "bolt", "description": "We craft a data-backed marketing plan aligned with your revenue goals." },

@@ -74,7 +74,7 @@ Madgen started in 2025 with a stubborn belief: small businesses deserve the same
 - **Frontend**: React, Next.js, TypeScript, Tailwind CSS, GSAP
 - **Backend & Cloud**: Node.js, MongoDB, PostgreSQL, AWS, GraphQL, Docker
 - **Mobile**: Swift, SwiftUI, Kotlin, Jetpack Compose, React Native, Flutter, Firebase
-- **Marketing & Analytics**: Google Analytics, Google Ads, Meta Ads, HubSpot, Salesforce, SEMrush, Ahrefs, Hotjar, Looker Studio
+- **Marketing & Analytics**: Google Analytics, Google Ads, Meta Ads, HubSpot, Salesforce, SEMrush, Ahrefs, Hotjar, Looker Media
 - **Design**: Figma, Adobe Creative Suite, Illustrator, Photoshop, After Effects
 
 ## Machine-Readable Resources

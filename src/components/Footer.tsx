@@ -46,7 +46,7 @@ export default function Footer() {
               <Link to="/services/branding" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Branding</Link>
             </div>
             <div className="footer-col">
-              <h4>Studio</h4>
+              <h4>Media</h4>
               <HashLink to="#about">About</HashLink>
               <HashLink to="#process">Process</HashLink>
               <HashLink to="#work">Work</HashLink>
@@ -82,7 +82,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>&copy; 2026 MADGEN STUDIO. ALL RIGHTS RESERVED.</span>
+          <span>&copy; 2026 MADGEN Media. ALL RIGHTS RESERVED.</span>
           <span>DESIGNED &amp; BUILT REMOTE-FIRST</span>
         </div>
       </div>
